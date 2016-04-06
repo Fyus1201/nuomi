@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<integer>2</integer>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>默认排序</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>评价最高</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>距离优先</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>最新发布</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>销量优先</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>价格最低</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+	<dict>
+		<key>array</key>
+		<array/>
+		<key>name</key>
+		<string>价格最高</string>
+		<key>title</key>
+		<string>0</string>
+	</dict>
+</array>
+</plist>
