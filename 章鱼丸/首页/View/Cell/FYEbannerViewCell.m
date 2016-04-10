@@ -7,7 +7,6 @@
 //
 
 #import "FYEbannerViewCell.h"
-#import "FYHomepageModel.h"
 #import "UIImageView+WebCache.h"
 
 @interface FYEbannerViewCell()<UIScrollViewDelegate>

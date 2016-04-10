@@ -8,6 +8,16 @@
 
 #import <Mantle/Mantle.h>
 
+@interface FYHometopModel : MTLModel<MTLJSONSerializing>
+
+@property (nonatomic, strong) NSArray *activetime;
+@property (nonatomic, strong) NSArray *list;
+@property (nonatomic, strong) NSNumber *isLogo;
+@property (nonatomic, strong) NSString *target_url;
+
+@end
+
+
 //服务
 @interface FYHomeGroup3Model : MTLModel<MTLJSONSerializing>
 
@@ -31,7 +41,7 @@
 
 @property (nonatomic, strong) FYHomeGroup3Model *hotService;
 
-@property (nonatomic, strong) NSDictionary *topten;
+@property (nonatomic, strong) FYHometopModel *topten;
 @property (nonatomic, strong) NSArray *nuomiNews;
 @property (nonatomic, strong) NSArray *nuomiBigNewBanner;
 @property (nonatomic, strong) NSArray *banners;

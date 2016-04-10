@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FYHomeMenuCellDelegate <NSObject>
+
+@optional
+-(void)didSelectedHomeMenuCellAtIndex:(NSInteger)index;
+
+@end
+
 @interface FYHomeMenuCell : UITableViewCell
 
+@property (nonatomic, assign) id<FYHomeMenuCellDelegate> delegate;
 +(instancetype)cellWithTableView:(UITableView *)tableView menuArray:(NSMutableArray *)menuArray;
 
 @end

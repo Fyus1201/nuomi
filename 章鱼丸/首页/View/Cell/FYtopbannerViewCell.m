@@ -6,10 +6,10 @@
 //  Copyright © 2016年 Fyus. All rights reserved.
 //
 
-#import "FYMbannerViewCell.h"
+#import "FYtopbannerViewCell.h"
 #import "UIImageView+WebCache.h"
 
-@interface FYMbannerViewCell()<UIScrollViewDelegate>
+@interface FYtopbannerViewCell()<UIScrollViewDelegate>
 {
     UIPageControl *_pageControl;
     UIScrollView *_scrollView;
@@ -24,7 +24,7 @@
 
 @end
 
-@implementation FYMbannerViewCell
+@implementation FYtopbannerViewCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -44,9 +44,9 @@
     {
         int z = (int)[array count] + 2;
         
-        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
+        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 170)];
         
-        _scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * z, 60);
+        _scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * z, 170);
         
         _scrollView.pagingEnabled = YES;//当值是 YES 会自动滚动到 subview 的边界，默认是NO
         _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width , 0);
@@ -58,10 +58,10 @@
         
         for (int i = 0; i < [array count]; i++)
         {
-            UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (i+1), 0, [UIScreen mainScreen].bounds.size.width, 60)];
+            UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (i+1), 0, [UIScreen mainScreen].bounds.size.width, 170)];
 
             NSDictionary *imagestr = array[i];
-            NSString *subStr = imagestr[@"image"];
+            NSString *subStr = imagestr[@"picture_url"];
 
             backView.image = [UIImage imageNamed:subStr];
             [backView sd_setImageWithURL:[NSURL URLWithString:subStr] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
@@ -74,10 +74,10 @@
             [_scrollView addSubview:backView];
         }
         //开头
-        UIImageView *backView0 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
+        UIImageView *backView0 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0, 0, [UIScreen mainScreen].bounds.size.width, 170)];
 
         NSDictionary *imagestr0 = [array lastObject];
-        NSString *subStr0 = imagestr0[@"image"];
+        NSString *subStr0 = imagestr0[@"picture_url"];
         
         backView0.image = [UIImage imageNamed:subStr0];
         [backView0 sd_setImageWithURL:[NSURL URLWithString:subStr0] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
@@ -89,10 +89,10 @@
         
         [_scrollView addSubview:backView0];
         //末尾
-        UIImageView *backView9 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (z-1), 0, [UIScreen mainScreen].bounds.size.width, 60)];
+        UIImageView *backView9 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (z-1), 0, [UIScreen mainScreen].bounds.size.width, 170)];
 
         NSDictionary *imagestr9 = array[0];
-        NSString *subStr9 = imagestr9[@"image"];
+        NSString *subStr9 = imagestr9[@"picture_url"];
         
         backView9.image = [UIImage imageNamed:subStr9];
         [backView9 sd_setImageWithURL:[NSURL URLWithString:subStr9] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
@@ -118,7 +118,7 @@
             cun = 2;
         }
         
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/cun, 45, 0, 20)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/cun, 150, 0, 20)];
         _pageControl.currentPage = 0;
         _pageControl.numberOfPages = [_scrollView.subviews count] -2;
         [_pageControl setCurrentPageIndicatorTintColor:[UIColor whiteColor]];
@@ -174,7 +174,7 @@
 -(void)Clicktap:(UITapGestureRecognizer *)sender//点击释放触发
 {
     int tag = (int)sender.view.tag-5000;
-    [self.delegate didSelectedMbannerViewCellIndex:tag];
+    [self.delegate didSelectedTopbannerViewCellIndex:tag];
 }
 
 
@@ -185,13 +185,13 @@
  */
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-
     if (led)
     {
         
     }else
     {
         [self closeTimer];
+
     }
 }
 
@@ -208,7 +208,7 @@
         
     }else
     {
-        [self addTimer];
+       [self addTimer];
     }
 }
 

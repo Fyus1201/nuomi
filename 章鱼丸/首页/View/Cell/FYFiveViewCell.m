@@ -7,7 +7,6 @@
 //
 
 #import "FYFiveViewCell.h"
-#import "FYHomepageModel.h"
 #import "UIImageView+WebCache.h"
 
 @interface FYFiveViewCell()<UIScrollViewDelegate>
@@ -33,21 +32,21 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier Array:(NSArray *)array
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-
+    
     if(self)
     {
         int z = (int)[array count] + 2;
         
-        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 80)];
+        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         
-        _scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * z, 80);
+        _scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * z, 60);
         
         _scrollView.pagingEnabled = YES;//当值是 YES 会自动滚动到 subview 的边界，默认是NO
         _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width , 0);
@@ -59,19 +58,14 @@
         
         for (int i = 0; i < [array count]; i++)
         {
-            UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (i+1), 0, [UIScreen mainScreen].bounds.size.width, 80)];
-
-            FYHomebannersModel *imagestr = array[i];
-            NSRange range = [imagestr.picture_url rangeOfString:@"&src="];
+            UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (i+1), 0, [UIScreen mainScreen].bounds.size.width, 60)];
             
-            if (range.location != NSNotFound)
-            {
-                NSString *subStr = [imagestr.picture_url substringFromIndex:range.location+range.length];
-                subStr = [subStr stringByRemovingPercentEncoding];//换格式
-                backView.image = [UIImage imageNamed:subStr];
-                [backView sd_setImageWithURL:[NSURL URLWithString:subStr] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
-            }
-
+            NSDictionary *imagestr = array[i];
+            NSString *subStr = imagestr[@"image"];
+            
+            backView.image = [UIImage imageNamed:subStr];
+            [backView sd_setImageWithURL:[NSURL URLWithString:subStr] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
+            
             backView.tag = 5000 + i;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Clicktap:)];
             [backView addGestureRecognizer:tap];
@@ -80,18 +74,13 @@
             [_scrollView addSubview:backView];
         }
         //开头
-        UIImageView *backView0 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0, 0, [UIScreen mainScreen].bounds.size.width, 80)];
-
-        FYHomebannersModel *imagestr0 = [array lastObject];
-        NSRange range0 = [imagestr0.picture_url rangeOfString:@"&src="];
+        UIImageView *backView0 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0, 0, [UIScreen mainScreen].bounds.size.width, 60)];
         
-        if (range0.location != NSNotFound)
-        {
-            NSString *subStr = [imagestr0.picture_url substringFromIndex:range0.location+range0.length];
-            subStr = [subStr stringByRemovingPercentEncoding];//换格式
-            backView0.image = [UIImage imageNamed:subStr];
-            [backView0 sd_setImageWithURL:[NSURL URLWithString:subStr] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
-        }
+        NSDictionary *imagestr0 = [array lastObject];
+        NSString *subStr0 = imagestr0[@"image"];
+        
+        backView0.image = [UIImage imageNamed:subStr0];
+        [backView0 sd_setImageWithURL:[NSURL URLWithString:subStr0] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
         
         backView0.tag = 5000 + [array count] -1;
         UITapGestureRecognizer *tap0 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Clicktap:)];
@@ -100,18 +89,13 @@
         
         [_scrollView addSubview:backView0];
         //末尾
-        UIImageView *backView9 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (z-1), 0, [UIScreen mainScreen].bounds.size.width, 80)];
-
-        FYHomebannersModel *imagestr9 = array[0];
-        NSRange range9 = [imagestr9.picture_url rangeOfString:@"&src="];
+        UIImageView *backView9 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (z-1), 0, [UIScreen mainScreen].bounds.size.width, 60)];
         
-        if (range9.location != NSNotFound)
-        {
-            NSString *subStr = [imagestr9.picture_url substringFromIndex:range9.location+range9.length];
-            subStr = [subStr stringByRemovingPercentEncoding];//换格式
-            //backView9.image = [UIImage imageNamed:subStr];
-            [backView9 sd_setImageWithURL:[NSURL URLWithString:subStr] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
-        }
+        NSDictionary *imagestr9 = array[0];
+        NSString *subStr9 = imagestr9[@"image"];
+        
+        backView9.image = [UIImage imageNamed:subStr9];
+        [backView9 sd_setImageWithURL:[NSURL URLWithString:subStr9] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
         
         backView9.tag = 5000;
         UITapGestureRecognizer *tap9 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Clicktap:)];
@@ -121,7 +105,6 @@
         [_scrollView addSubview:backView9];
         
         [self addSubview:_scrollView];
-        
         
         double cun;
         if([UIScreen mainScreen].bounds.size.width == 375)//375*667
@@ -134,7 +117,8 @@
         {
             cun = 2;
         }
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/cun, 65, 0, 20)];
+        
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/cun, 45, 0, 20)];
         _pageControl.currentPage = 0;
         _pageControl.numberOfPages = [_scrollView.subviews count] -2;
         [_pageControl setCurrentPageIndicatorTintColor:[UIColor whiteColor]];
@@ -143,7 +127,6 @@
         if (array.count > 1)
         {
             [self addSubview:_pageControl];
-            //添加定时器
             [self addTimer];
         }else
         {
@@ -153,7 +136,7 @@
         _page = 1;
         _page1 = [array count]+1;
         
-
+        
     }
     return self;
 }
@@ -162,13 +145,13 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView//手指拖动后调用
 {
-
-        CGFloat scrollViewW = scrollView.frame.size.width;
-        CGFloat x = scrollView.contentOffset.x;
-        int page = (x + scrollViewW/2)/scrollViewW;
-        
-        _pageControl.currentPage = page-1;
-
+    
+    CGFloat scrollViewW = scrollView.frame.size.width;
+    CGFloat x = scrollView.contentOffset.x;
+    int page = (x + scrollViewW/2)/scrollViewW;
+    
+    _pageControl.currentPage = page-1;
+    
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView//拖动结束后调用
@@ -185,7 +168,7 @@
     {
         scrollView.contentOffset  = CGPointMake(scrollView.frame.size.width*1, 0);
     }
-  
+    
 }
 
 -(void)Clicktap:(UITapGestureRecognizer *)sender//点击释放触发
@@ -208,6 +191,7 @@
     }else
     {
         [self closeTimer];
+        
     }
 }
 
@@ -243,7 +227,7 @@
 -(void)nextImage
 {
     _page = _page+1;
-
+    
     [_scrollView setContentOffset:CGPointMake(_page*_scrollView.frame.size.width, 0) animated:YES];
     
     if (_page == _page1)
@@ -263,3 +247,4 @@
 
 
 @end
+

@@ -221,6 +221,9 @@
 -(void)Clicktap:(UITapGestureRecognizer *)sender//点击释放触发
 {
     NSLog(@"tag:%ld",sender.view.tag);
+    UIView *backView = (UIView *)sender.view;
+    int tag = (int)backView.tag-100;
+    [self.delegate didSelectedHomeMenuCellAtIndex:tag];
 }
 
 - (void)awakeFromNib {

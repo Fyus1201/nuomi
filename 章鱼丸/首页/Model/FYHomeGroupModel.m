@@ -31,6 +31,12 @@
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[FYHomeGroup3Model class]];
 }
 
++ (NSValueTransformer *)toptenJSONTransformer
+{
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[FYHometopModel class]];
+}
+
+
 @end
 
 
@@ -46,6 +52,21 @@
              @"moreLink":@"moreLink",
              @"titleColor":@"titleColor",
              @"banner":@"banner",
+             };
+}
+
+@end
+
+//4
+@implementation FYHometopModel
+
++(NSDictionary *)JSONKeyPathsByPropertyKey
+{
+    return @{
+             @"activetime":@"activetime",
+             @"list":@"list",
+             @"isLogo":@"isLogo",
+             @"target_url":@"target_url"
              };
 }
 

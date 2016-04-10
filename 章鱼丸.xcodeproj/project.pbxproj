@@ -392,7 +392,6 @@
 		5F43F9891CB0041D0007BD53 /* FYData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F97C1CB0041D0007BD53 /* FYData+CoreDataProperties.m */; };
 		5F43F98A1CB0041D0007BD53 /* FYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F97E1CB0041D0007BD53 /* FYDataModel.m */; };
 		5F43F98B1CB0041D0007BD53 /* FYHomeGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9801CB0041D0007BD53 /* FYHomeGroupModel.m */; };
-		5F43F98C1CB0041D0007BD53 /* FYHomepageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9821CB0041D0007BD53 /* FYHomepageModel.m */; };
 		5F43F98D1CB0041D0007BD53 /* FYHomeShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9841CB0041D0007BD53 /* FYHomeShopModel.m */; };
 		5F43F98E1CB0041D0007BD53 /* menuData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F9851CB0041D0007BD53 /* menuData.plist */; };
 		5F43F98F1CB0041D0007BD53 /* twoData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F9861CB0041D0007BD53 /* twoData.plist */; };
@@ -437,6 +436,7 @@
 		5F43FA051CB008620007BD53 /* FYSevenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9F51CB008620007BD53 /* FYSevenViewCell.m */; };
 		5F43FA061CB008620007BD53 /* FYXingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9F71CB008620007BD53 /* FYXingViewCell.m */; };
 		5F43FA071CB008620007BD53 /* FYXingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F9F81CB008620007BD53 /* FYXingViewCell.xib */; };
+		5F6DC7161CB93C12005C2734 /* FYtopbannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6DC7151CB93C12005C2734 /* FYtopbannerViewCell.m */; };
 		5F7E5AE41C9D90E40059947B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E5ADE1C9D900C0059947B /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5F7E5AE51C9D90F80059947B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E5AE01C9D90250059947B /* SystemConfiguration.framework */; };
 		5F7E5AE61C9D91050059947B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E5AE21C9D90360059947B /* Foundation.framework */; };
@@ -879,8 +879,6 @@
 		5F43F97E1CB0041D0007BD53 /* FYDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYDataModel.m; path = "首页/Model/FYDataModel.m"; sourceTree = "<group>"; };
 		5F43F97F1CB0041D0007BD53 /* FYHomeGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYHomeGroupModel.h; path = "首页/Model/FYHomeGroupModel.h"; sourceTree = "<group>"; };
 		5F43F9801CB0041D0007BD53 /* FYHomeGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYHomeGroupModel.m; path = "首页/Model/FYHomeGroupModel.m"; sourceTree = "<group>"; };
-		5F43F9811CB0041D0007BD53 /* FYHomepageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYHomepageModel.h; path = "首页/Model/FYHomepageModel.h"; sourceTree = "<group>"; };
-		5F43F9821CB0041D0007BD53 /* FYHomepageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYHomepageModel.m; path = "首页/Model/FYHomepageModel.m"; sourceTree = "<group>"; };
 		5F43F9831CB0041D0007BD53 /* FYHomeShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYHomeShopModel.h; path = "首页/Model/FYHomeShopModel.h"; sourceTree = "<group>"; };
 		5F43F9841CB0041D0007BD53 /* FYHomeShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYHomeShopModel.m; path = "首页/Model/FYHomeShopModel.m"; sourceTree = "<group>"; };
 		5F43F9851CB0041D0007BD53 /* menuData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = menuData.plist; path = "首页/Model/menuData.plist"; sourceTree = "<group>"; };
@@ -955,6 +953,8 @@
 		5F43F9F61CB008620007BD53 /* FYXingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYXingViewCell.h; path = "首页/View/Cell/FYXingViewCell.h"; sourceTree = "<group>"; };
 		5F43F9F71CB008620007BD53 /* FYXingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYXingViewCell.m; path = "首页/View/Cell/FYXingViewCell.m"; sourceTree = "<group>"; };
 		5F43F9F81CB008620007BD53 /* FYXingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FYXingViewCell.xib; path = "首页/View/Cell/FYXingViewCell.xib"; sourceTree = "<group>"; };
+		5F6DC7141CB93C12005C2734 /* FYtopbannerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYtopbannerViewCell.h; path = "首页/View/Cell/FYtopbannerViewCell.h"; sourceTree = "<group>"; };
+		5F6DC7151CB93C12005C2734 /* FYtopbannerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYtopbannerViewCell.m; path = "首页/View/Cell/FYtopbannerViewCell.m"; sourceTree = "<group>"; };
 		5F7E5ADE1C9D900C0059947B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5F7E5AE01C9D90250059947B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F7E5AE21C9D90360059947B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1759,6 +1759,8 @@
 		5FB961871C8D84AE00638CE0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				5F6DC7141CB93C12005C2734 /* FYtopbannerViewCell.h */,
+				5F6DC7151CB93C12005C2734 /* FYtopbannerViewCell.m */,
 				5F43F9E61CB008620007BD53 /* FYHomeMenuCell.h */,
 				5F43F9E71CB008620007BD53 /* FYHomeMenuCell.m */,
 				5F43F9E81CB008620007BD53 /* FYHomeTwoCell.h */,
@@ -1813,8 +1815,6 @@
 				5F43F97E1CB0041D0007BD53 /* FYDataModel.m */,
 				5F43F97F1CB0041D0007BD53 /* FYHomeGroupModel.h */,
 				5F43F9801CB0041D0007BD53 /* FYHomeGroupModel.m */,
-				5F43F9811CB0041D0007BD53 /* FYHomepageModel.h */,
-				5F43F9821CB0041D0007BD53 /* FYHomepageModel.m */,
 				5F43F9831CB0041D0007BD53 /* FYHomeShopModel.h */,
 				5F43F9841CB0041D0007BD53 /* FYHomeShopModel.m */,
 				5F43F9851CB0041D0007BD53 /* menuData.plist */,
@@ -1884,7 +1884,6 @@
 				5F43F9CB1CB006FC0007BD53 /* FYFuJinView.m */,
 				5F42B12B1CB352A700FAC739 /* FYTopView.h */,
 				5F42B12C1CB352A700FAC739 /* FYTopView.m */,
-				5F42B1341CB37F0900FAC739 /* Model */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1952,6 +1951,7 @@
 			children = (
 				5FE46E911CA6DDDA005814BD /* Controller */,
 				5FE46E931CA6DE90005814BD /* View */,
+				5F42B1341CB37F0900FAC739 /* Model */,
 			);
 			name = "精选";
 			sourceTree = "<group>";
@@ -2559,6 +2559,7 @@
 				5F43F9DD1CB008500007BD53 /* FYMenuBtnView.m in Sources */,
 				5F43F9BE1CB0062C0007BD53 /* FYMeViewController.m in Sources */,
 				5F43F99A1CB004F90007BD53 /* ___.xcdatamodeld in Sources */,
+				5F6DC7161CB93C12005C2734 /* FYtopbannerViewCell.m in Sources */,
 				5F43F9541CB002A50007BD53 /* FYWebViewController.m in Sources */,
 				5F43F9661CB003A40007BD53 /* NSString+urlString.m in Sources */,
 				5F43F9C91CB006E50007BD53 /* FYTuijianTableViewCell.m in Sources */,
@@ -2571,7 +2572,6 @@
 				5F43F9D51CB007610007BD53 /* FYJBiaotiTableViewCell.m in Sources */,
 				5F43F9A41CB0057E0007BD53 /* FYItemView.m in Sources */,
 				5F43F9BC1CB0062C0007BD53 /* FYDengluViewController.m in Sources */,
-				5F43F98C1CB0041D0007BD53 /* FYHomepageModel.m in Sources */,
 				5F43F9AC1CB005B10007BD53 /* FYItemController.m in Sources */,
 				5F43F9AB1CB005B10007BD53 /* FYImageWebController.m in Sources */,
 				5F43F9731CB003E20007BD53 /* FYHomeViewController.m in Sources */,

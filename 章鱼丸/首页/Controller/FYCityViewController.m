@@ -12,7 +12,6 @@
 
 @interface FYCityViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-
 @property (nonatomic, strong) NSMutableArray *dataSource;//服务器数据
 @property (nonatomic, strong) NSMutableArray *indexSource;//引用数据
 
