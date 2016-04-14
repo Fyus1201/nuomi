@@ -117,10 +117,9 @@
 {
     [super viewWillAppear:animated];
 
-    //self.navigationController.title = @"";//他的图层被移除了
-    self.navigationController.navigationBarHidden = NO;
-    self.navigationController.navigationBar.alpha = 0.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
+    //self.navigationController.navigationBar.alpha = 0.000;
 
+    self.navigationController.navigationBarHidden = YES;
     if (self.led == YES)
     {
         self.lab.text = @"";
@@ -134,31 +133,30 @@
     }
 
 }
-/*
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    self.navigationController.navigationBar.alpha = 0.000;
-}*/
+    //self.navigationController.navigationBar.alpha = 0.000;
+}
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    //[self.navigationController.navigationBar lt_reset];
-    self.navigationController.navigationBar.alpha = 1.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
+    //self.navigationController.navigationBar.alpha = 1.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;//退出当前ViewController后变回黑色
 }
-/*
+
 - (void)viewDidDisappear:(BOOL)animated//考虑到滑动推出，另外加两个进行过度
 {
     [super viewDidDisappear:animated];
-    self.navigationController.navigationBar.alpha = 1.000;
-}*/
+    //self.navigationController.navigationBar.alpha = 1.000;
+}
 
 -(void)setNav
 {
-    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];//用BackgroundColor来做背景，需要处理上方的空格
+    //[self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];//用BackgroundColor来做背景，需要处理上方的空格
+    //[self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0]];
     //self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     //self.navigationController.navigationBar. translucent = YES ; //半透明
@@ -221,7 +219,7 @@
 -(void)OnZhuceBtn:(UIButton *)sender
 {
     FYDengluViewController *denglu = [[FYDengluViewController alloc]initWithNibName:@"FYDengluViewController" bundle:nil];
-    
+
     //denglu.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
     [self presentViewController:denglu animated:YES completion:nil];//1.点击，相应跳转
 }

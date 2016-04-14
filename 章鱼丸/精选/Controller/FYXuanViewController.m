@@ -74,7 +74,6 @@
     [self initAdvView];
     [self initMaskView];
     
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -292,6 +291,7 @@
     
     self.navigationItem.title = @"精选品牌";
 
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
 }
 
 #pragma mark - 右边的按钮
@@ -508,7 +508,6 @@
                     [_ledTuanlist insertObject:led atIndex:indexPath.section-1];
                     
                     [self.tableView reloadData];
-                    
                 }else
                 {
                     NSDictionary *tuanlist = self.dataTuanlist[indexPath.section-1][@"tuan_list"];
@@ -524,7 +523,6 @@
                     
                     item.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
                     [self.navigationController pushViewController:item animated:YES];//1.点击，相应跳转
-                    
                 }
             }else
             {
@@ -583,8 +581,6 @@
         web0.LED = NO;
         web0.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
         [self.navigationController pushViewController:web0 animated:YES];//1.点击，相应跳转
-        
-       // NSLog(@"%@",_dataTuanlist[tag]);
     }
 }
 
@@ -687,32 +683,50 @@
 #pragma mark - UIGestureRecognizerDelegate
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
-    //吃掉tableview的点击事件
-    
-    if ([touch.view isKindOfClass:[UITableView class]])
+    //吃掉tableview的点击事件(会吃掉interactivePopGestureRecognizer手势，包括父视图)
+    if (gestureRecognizer != self.navigationController.interactivePopGestureRecognizer)
     {
-        //        NSLog(@"111111");
-        return NO;
+        if ([touch.view isKindOfClass:[UITableView class]])
+        {
+            //NSLog(@"111111");
+            return NO;
+        }
+        if ([touch.view.superview isKindOfClass:[UITableView class]])
+        {
+            //NSLog(@"22222");
+            return NO;
+        }
+        if ([touch.view.superview.superview isKindOfClass:[UITableView class]])
+        {
+            //NSLog(@"33333");
+            return NO;
+        }
+        if ([touch.view.superview.superview.superview isKindOfClass:[UITableView class]])
+        {
+            //NSLog(@"44444");
+            return NO;
+        }
     }
-    if ([touch.view.superview isKindOfClass:[UITableView class]])
-    {
-        //        NSLog(@"22222");
-        return NO;
-    }
-    if ([touch.view.superview.superview isKindOfClass:[UITableView class]])
-    {
-        //        NSLog(@"33333");
-        return NO;
-    }
-    if ([touch.view.superview.superview.superview isKindOfClass:[UITableView class]])
-    {
-        //        NSLog(@"44444");
-        return NO;
-    }
+
     return YES;
 }
 
-
+#pragma mark - UIGestureRecognizerDelegate 在根视图时不响应interactivePopGestureRecognizer手势
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer == self.navigationController.interactivePopGestureRecognizer)
+    {
+        if (self.navigationController.viewControllers.count == 1)
+        {
+            return NO;
+        }
+        else
+        {
+            return YES;
+        }
+    }
+    return YES;
+}
 
 #pragma mark - Delegate
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath withId:(NSNumber *)ID withName:(NSString *)name

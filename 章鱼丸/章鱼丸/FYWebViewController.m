@@ -29,7 +29,8 @@
     [self initViews];//加载时候的圈圈
 }
 
--(void)initViews{
+-(void)initViews
+{
     _activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-15, [UIScreen mainScreen].bounds.size.height/2-85, 30, 30)];
     _activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     //_activityView.backgroundColor = [UIColor redColor];
@@ -99,7 +100,6 @@
     }
     
     self.navigationItem.rightBarButtonItems = @[item1];
-    
     self.navigationItem.title = self.name;
 }
 
@@ -108,7 +108,6 @@
     NSLog(@"搜索");
     
     FYSearchViewController *search = [[FYSearchViewController alloc]init];
-    
     search.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
     [self.navigationController pushViewController:search animated:YES];//1.点击，相应跳转
 }
@@ -118,7 +117,6 @@
     NSLog(@"购物车");
     
     FYDengluViewController *denglu = [[FYDengluViewController alloc]initWithNibName:@"FYDengluViewController" bundle:nil];
-    
     //denglu.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
     [self presentViewController:denglu animated:YES completion:nil];//1.点击，相应跳转
 }
@@ -163,13 +161,13 @@
     NSRange range = [cont rangeOfString:@"bainuo://"];
     if (range.location != NSNotFound)
     {
-        return NO;//你tm别想跳到糯米上,233333
+        return NO;//你tm别想跳到糯米app上,233333
     }
     
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
     //[webView stringByEvaluatingJavaScriptFromString:@"alert('测试章鱼')"];//可以出弹窗
     //    self.title = theTitle;
-    NSLog(@"测试2:   %@",theTitle);
+    //NSLog(@"测试2:   %@",theTitle);
     
    // NSString *shuju=[webView stringByEvaluatingJavaScriptFromString:@"document"];
     //NSLog(@"数据大爷%@",cont);

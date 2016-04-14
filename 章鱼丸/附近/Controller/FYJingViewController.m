@@ -73,7 +73,7 @@
     [self initDropMenu];
     
     [self initAdvView];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -233,6 +233,19 @@
     self.navigationItem.rightBarButtonItems = @[item1,item2];
     
     self.navigationItem.title = @"附近";
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+}
+#pragma mark - UIGestureRecognizerDelegate 在根视图时不响应interactivePopGestureRecognizer手势
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (self.navigationController.viewControllers.count == 1)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 #pragma mark - 右边的按钮

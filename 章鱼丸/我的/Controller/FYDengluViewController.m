@@ -33,6 +33,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 入出 设置
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+}
+
+ - (void)viewDidAppear:(BOOL)animated
+ {
+ [super viewDidAppear:animated];
+ 
+  }
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated//考虑到滑动推出，另外加两个进行过度
+{
+     [super viewDidDisappear:animated];
+}
+
 -(void)initNav
 {
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];

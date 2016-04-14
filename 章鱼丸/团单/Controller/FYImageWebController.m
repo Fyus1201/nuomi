@@ -25,7 +25,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1];
     //self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
 
-    //self.navigationController.navigationBar.topItem.title = @"图文详情";//最上层图层
+    self.navigationController.navigationBar.topItem.title = @"图文详情";//最上层图层
     //self.navigationController.title = @"图文详情";
     //前面指定过，这边不行了
     
@@ -41,6 +41,19 @@
     [_webView0 loadHTMLString:self.htmlString baseURL:nil];
     [_webView1 loadHTMLString:self.htmlString baseURL:nil];
 
+}
+
+#pragma mark - 入出 设置
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    //self.navigationController.navigationBar.alpha = 0.000;
+    
+    self.navigationController.navigationBarHidden = NO;
+    self.navigationController.navigationBar.topItem.title = @"图文详情";//最上层图层
+
+    
 }
 /*
 -(void)viewWillDisappear:(BOOL)animated

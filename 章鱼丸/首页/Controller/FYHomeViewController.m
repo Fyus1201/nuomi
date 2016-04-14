@@ -94,6 +94,8 @@
     [self initTableview];//初始化表格
     [self setNav];//真正的头部
     
+    self.navigationController.interactivePopGestureRecognizer.delegate =(id)self;
+    
 }
 
 #pragma mark - 入出 设置
@@ -1240,6 +1242,19 @@
     //UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     //cell.selected = NO;  //这种是点击的时候有效果，返回后效果消失
     
+}
+
+#pragma mark - UIGestureRecognizerDelegate 在根视图时不响应interactivePopGestureRecognizer手势
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (self.navigationController.viewControllers.count == 1)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 #pragma mark - 手势点击跳转页面

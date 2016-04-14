@@ -89,7 +89,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     self.navigationItem.title = @"";
     self.navigationController.navigationBarHidden = YES;
     
@@ -128,6 +127,7 @@
     closeBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-50, 35, 50, 25);
     [closeBtn setTitle: @"取消" forState:UIControlStateNormal];
     [closeBtn setTitleColor:[UIColor colorWithRed:252/255.0 green:74/255.0 blue:132/255.0 alpha:0.9]forState:UIControlStateNormal];
+    
     [closeBtn addTarget:self action:@selector(OnCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.NavView addSubview:closeBtn];
 }
