@@ -101,12 +101,11 @@
 {
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationBarHidden = YES;
+    [self.navigationController setNavigationBarHidden:YES animated:YES];//隐藏 常态时是否隐藏 动画时是否显示
     //图标颜色转换
     if (self.led == NO)
     {
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
-        NSLog(@"你好");
     }
     else
     {
@@ -116,7 +115,7 @@
     
     
     
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:252/255.0 green:74/255.0 blue:132/255.0 alpha:0.9];//背景颜色
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
     
     FYData *item = [[FYDataModel sharedStore] allItems][0];
     [_leftbtn setTitle:item.city forState:UIControlStateNormal];
@@ -252,7 +251,7 @@
 #pragma mark - 初始化头部
 -(void)setupnav
 {
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:252/255.0 green:74/255.0 blue:132/255.0 alpha:0.9];//背景颜色
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"";
@@ -260,6 +259,7 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:252/255.0 green:74/255.0 blue:132/255.0 alpha:0.9];//里面的item颜色
     self.navigationController.navigationBar.translucent = NO;//是否为半透明
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     /*
     //左边按钮
     UIButton *leftbtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -330,7 +330,7 @@
 //重新初始化头部,考虑到navigationController定制度很高
 -(void)setNav
 {
-    self.NavView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
+    self.NavView = [[UIView alloc]initWithFrame:CGRectMake(-0.5, -0.5, [UIScreen mainScreen].bounds.size.width+1, 64.5)];
     self.NavView.backgroundColor = [UIColor whiteColor];
     self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:0];
     
@@ -465,26 +465,34 @@
         
         if (offsetY <= 0 && offsetY >= -20)
         {
-            self.NavView.hidden = NO;
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                                 self.NavView.alpha = 1.0;
+                             } completion:^(BOOL finished) {
+                             }];
             self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:0];
             
         }
         else if (offsetY < -20)
         {
-            self.NavView.hidden = YES;
-
+            
+            [UIView animateWithDuration:0.25
+                             animations:^{
+                self.NavView.alpha = 0.0;
+            } completion:^(BOOL finished) {
+            }];
         }
         else if (offsetY > 0)
         {
-            if (self.NavView.hidden == YES)
+            if (self.NavView.alpha == 0.0)
             {
-                self.NavView.hidden = NO;
+                self.NavView.alpha = 1.0;
             }
             self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:offsetY / 120];
         }
         
         //图标颜色转换
-        if (offsetY < 80)
+        if (offsetY < 80 && offsetY > -25)
         {
             if (self.led == NO)
             {
@@ -496,6 +504,9 @@
                 UIButton *XBtn = (UIButton *)[self.NavView viewWithTag:402];
                 [EBtn setImage:[UIImage imageNamed:@"home-10-08"] forState:UIControlStateNormal];
                 [XBtn setImage:[UIImage imageNamed:@"home-10-07"] forState:UIControlStateNormal];
+                
+                self.NavView.layer.borderWidth = 0.0;//边框线
+                self.NavView.layer.borderColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.9].CGColor;
                 
                 [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
             }
@@ -511,6 +522,16 @@
                 UIButton *XBtn = (UIButton *)[self.NavView viewWithTag:402];
                 [EBtn setImage:[UIImage imageNamed:@"home-10-03"] forState:UIControlStateNormal];
                 [XBtn setImage:[UIImage imageNamed:@"home-10-04"] forState:UIControlStateNormal];
+                
+                if (offsetY < -25)
+                {
+                    self.NavView.layer.borderWidth = 0.0;//边框线
+                    self.NavView.layer.borderColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.9].CGColor;
+                }else
+                {
+                    self.NavView.layer.borderWidth = 0.5;//边框线
+                    self.NavView.layer.borderColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.9].CGColor;
+                }
                 
                 [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
             }
@@ -647,7 +668,7 @@
 {
     if(indexPath.section == 0)
     {
-        return 170;
+        return 160;
     } else if (indexPath.section == 1)
     {
         return 180;
@@ -1123,14 +1144,9 @@
                 return cell;
             }else
             {
-                static NSString *cellIndentifier = @"cell8";
-                FYLikeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIndentifier];
+                FYLikeViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell8"];
                 if (_likeArray.count>0)
                 {
-                    if (cell == nil)
-                    {
-                        cell = [[FYLikeViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIndentifier];
-                    }
                     FYShopTuanModel *shopM = _likeArray[indexPath.row - 1];
                     [cell setShopM:shopM];
                 }

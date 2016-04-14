@@ -455,6 +455,7 @@
 		5F918CA81C8968FB002D73FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F918CA61C8968FB002D73FC /* LaunchScreen.storyboard */; };
 		5F918CB31C8968FB002D73FC /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F918CB21C8968FB002D73FC /* ___Tests.m */; };
 		5F918CBE1C8968FB002D73FC /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F918CBD1C8968FB002D73FC /* ___UITests.m */; };
+		5FA0B2D21CBE676700F22DBD /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -980,6 +981,8 @@
 		5F918CB91C8968FB002D73FC /* 章鱼丸UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "章鱼丸UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F918CBD1C8968FB002D73FC /* ___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UITests.m"; sourceTree = "<group>"; };
 		5F918CBF1C8968FB002D73FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FA0B2D01CBE676700F22DBD /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Awesome.h"; path = "首页/Other/UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
+		5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Awesome.m"; path = "首页/Other/UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		819B8D4CD0AA118B7E7C1E21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1836,6 +1839,8 @@
 				5F43F95E1CB0039F0007BD53 /* IATConfig.m */,
 				5F43F95F1CB0039F0007BD53 /* ISRDataHelper.h */,
 				5F43F9601CB0039F0007BD53 /* ISRDataHelper.m */,
+				5FA0B2D01CBE676700F22DBD /* UINavigationBar+Awesome.h */,
+				5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -2558,6 +2563,7 @@
 				5F43F9881CB0041D0007BD53 /* FYData.m in Sources */,
 				5F43F9DD1CB008500007BD53 /* FYMenuBtnView.m in Sources */,
 				5F43F9BE1CB0062C0007BD53 /* FYMeViewController.m in Sources */,
+				5FA0B2D21CBE676700F22DBD /* UINavigationBar+Awesome.m in Sources */,
 				5F43F99A1CB004F90007BD53 /* ___.xcdatamodeld in Sources */,
 				5F6DC7161CB93C12005C2734 /* FYtopbannerViewCell.m in Sources */,
 				5F43F9541CB002A50007BD53 /* FYWebViewController.m in Sources */,

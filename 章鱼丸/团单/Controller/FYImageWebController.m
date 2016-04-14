@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UIWebView *webView0;
 @property (nonatomic, strong) UIWebView *webView1;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIView *NavView;  //改用系统默认
 
 @end
 
@@ -22,9 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1];
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
+    //self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
 
-    self.navigationController.navigationBar.topItem.title = @"图文详情";
+    //self.navigationController.navigationBar.topItem.title = @"图文详情";//最上层图层
     //self.navigationController.title = @"图文详情";
     //前面指定过，这边不行了
     
@@ -36,9 +37,33 @@
     _webView1.scrollView.scrollEnabled = NO;
     
     [self initTableView];
+    [self setNav];
     [_webView0 loadHTMLString:self.htmlString baseURL:nil];
     [_webView1 loadHTMLString:self.htmlString baseURL:nil];
 
+}
+/*
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.alpha = 1.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;//退出当前ViewController后变回黑色
+}
+- (void)viewDidDisappear:(BOOL)animated//无效
+{
+    [super viewDidDisappear:animated];
+    self.navigationController.navigationBar.alpha = 0.000;
+}*/
+
+-(void)setNav
+{
+    
+    self.NavView = [[UIView alloc]initWithFrame:CGRectMake(-0.5, -64.5, [UIScreen mainScreen].bounds.size.width+1, 64.5)];
+    self.NavView.backgroundColor = [UIColor whiteColor];
+    self.NavView.layer.borderWidth = 0.5;//边框线
+    self.NavView.layer.borderColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.9].CGColor;
+    [self.view addSubview:self.NavView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

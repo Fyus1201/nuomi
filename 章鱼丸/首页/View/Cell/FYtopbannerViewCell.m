@@ -44,9 +44,9 @@
     {
         int z = (int)[array count] + 2;
         
-        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 170)];
+        _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 160)];
         
-        _scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * z, 170);
+        _scrollView.contentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width * z, 160);
         
         _scrollView.pagingEnabled = YES;//当值是 YES 会自动滚动到 subview 的边界，默认是NO
         _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width , 0);
@@ -58,7 +58,7 @@
         
         for (int i = 0; i < [array count]; i++)
         {
-            UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (i+1), 0, [UIScreen mainScreen].bounds.size.width, 170)];
+            UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (i+1), 0, [UIScreen mainScreen].bounds.size.width, 160)];
 
             NSDictionary *imagestr = array[i];
             NSString *subStr = imagestr[@"picture_url"];
@@ -74,7 +74,7 @@
             [_scrollView addSubview:backView];
         }
         //开头
-        UIImageView *backView0 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0, 0, [UIScreen mainScreen].bounds.size.width, 170)];
+        UIImageView *backView0 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * 0, 0, [UIScreen mainScreen].bounds.size.width, 160)];
 
         NSDictionary *imagestr0 = [array lastObject];
         NSString *subStr0 = imagestr0[@"picture_url"];
@@ -89,7 +89,7 @@
         
         [_scrollView addSubview:backView0];
         //末尾
-        UIImageView *backView9 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (z-1), 0, [UIScreen mainScreen].bounds.size.width, 170)];
+        UIImageView *backView9 = [[UIImageView alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width * (z-1), 0, [UIScreen mainScreen].bounds.size.width, 160)];
 
         NSDictionary *imagestr9 = array[0];
         NSString *subStr9 = imagestr9[@"picture_url"];
@@ -118,7 +118,7 @@
             cun = 2;
         }
         
-        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/cun, 150, 0, 20)];
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/cun, 140, 0, 20)];
         _pageControl.currentPage = 0;
         _pageControl.numberOfPages = [_scrollView.subviews count] -2;
         [_pageControl setCurrentPageIndicatorTintColor:[UIColor whiteColor]];

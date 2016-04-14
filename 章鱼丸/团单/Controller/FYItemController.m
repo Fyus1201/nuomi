@@ -17,6 +17,7 @@
 #import "FYWebViewController.h"
 #import "FYMenuBtnView.h"
 #import "UIImageView+WebCache.h"
+#import "UINavigationBar+Awesome.h"
 #import <SVProgressHUD.h>
 
 @interface FYItemController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,UIWebViewDelegate,FYItemTuanTableViewCellDelegate>
@@ -26,7 +27,7 @@
 @property (nonatomic, strong) UIImageView *imaView;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIView *NavView;
+@property (nonatomic, strong) UIView *NavView;  //改用系统默认
 @property (nonatomic, strong) UIView *footView;
 @property (nonatomic, strong) UIImageView *imageView;
 
@@ -35,13 +36,12 @@
 @property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIButton *fenxiang;
 @property (nonatomic, strong) UIButton *mai;
-@property (nonatomic, strong) UILabel *lab;
 
 @property (nonatomic) BOOL led;
 
 @property (nonatomic, strong) NSDictionary *itemModel;
 @property (nonatomic, strong) NSMutableArray *likeArray;
-
+@property (nonatomic, strong) UILabel *lab;
 @property (nonatomic, strong) UIWebView *webView1;
 
 @end
@@ -52,11 +52,9 @@
 {
     [super viewDidLoad];
     
-    
     [self getData:self.httpUrl withHttpArg:self.HttpArg];
     [self getRecommendData];
     
-    self.navigationController.title = @"";
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"返回";
     self.navigationItem.backBarButtonItem = backItem;//跳出，返回时的描述
@@ -119,30 +117,74 @@
 {
     [super viewWillAppear:animated];
 
-    self.navigationController.navigationBarHidden = YES;
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
-    
+    //self.navigationController.title = @"";//他的图层被移除了
+    self.navigationController.navigationBar.alpha = 0.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
+
+    if (self.led == YES)
+    {
+        self.lab.text = @"";
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
+        
+    }else
+    {
+        self.lab.text = _itemModel[@"title"];
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+        
+    }
+
 }
+/*
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    self.navigationController.navigationBar.alpha = 0.000;
+}*/
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
+    //[self.navigationController.navigationBar lt_reset];
+    self.navigationController.navigationBar.alpha = 1.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;//退出当前ViewController后变回黑色
 }
+/*
+- (void)viewDidDisappear:(BOOL)animated//考虑到滑动推出，另外加两个进行过度
+{
+    [super viewDidDisappear:animated];
+    self.navigationController.navigationBar.alpha = 1.000;
+}*/
 
 -(void)setNav
 {
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor clearColor]];//用BackgroundColor来做背景，需要处理上方的空格
+    //self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    //self.navigationController.navigationBar. translucent = YES ; //半透明
+    /*
+    for (UIView *view in self.navigationController.navigationBar.subviews)
+    {
+        NSLog(@"图层 %@",self.navigationController.navigationBar.subviews);
+        if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")])//这个图层不能透明，需要去掉
+        {
+            [view removeFromSuperview];
+        }
+    }*/
+    
     self.NavView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
     self.NavView.backgroundColor = [UIColor whiteColor];
     self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:0];
     [self.view addSubview:self.NavView];
+    
+    
     self.lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 40)];
     self.lab.textAlignment = NSTextAlignmentCenter;
     self.lab.text = @"";
     self.lab.textColor = [UIColor blackColor];
-    
+
+    //self.navigationItem.titleView = self.lab;
     [self.NavView addSubview:self.lab];
+
     
     self.fenxiang = [UIButton buttonWithType:UIButtonTypeCustom];
     self.fenxiang.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-50, 28, 25, 25);
@@ -155,6 +197,8 @@
     self.fenxiang.contentHorizontalAlignment =UIControlContentHorizontalAlignmentCenter;
     
     [self.fenxiang addTarget:self action:@selector(OnZhuceBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.fenxiang];
     [self.NavView addSubview:self.fenxiang];
     
     //退出
@@ -162,7 +206,10 @@
     self.closeBtn.frame = CGRectMake(20, 30, 20, 20);
     [self.closeBtn setImage:[UIImage imageNamed:@"brower_pre_0"] forState:UIControlStateNormal];
     [self.closeBtn addTarget:self action:@selector(OnCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.closeBtn];
     [self.NavView addSubview:self.closeBtn];
+    
 }
 
 -(void)OnCloseBtn:(UIButton *)sender//推出设置
@@ -275,7 +322,9 @@
             
             _imageView.frame = CGRectMake(offsetY*0.75, 50 , [UIScreen mainScreen].bounds.size.width-1.5*offsetY, [UIScreen mainScreen].bounds.size.width*0.65 - offsetY-50);
             
+            //[self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor]colorWithAlphaComponent:0]];
             self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:0];
+
 
         }
         else if (offsetY < -170)
@@ -284,6 +333,7 @@
         }
         else if (offsetY > 0)
         {
+            //[self.navigationController.navigationBar lt_setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:offsetY / 120]];
             self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:offsetY / 120];
             
         }
@@ -312,6 +362,7 @@
                 [self.fenxiang setBackgroundImage:home1008 forState:UIControlStateNormal];
                 
                 [self.closeBtn setImage:[UIImage imageNamed:@"detailViewBackRed"] forState:UIControlStateNormal];
+                self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
                 
                 [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
             }
