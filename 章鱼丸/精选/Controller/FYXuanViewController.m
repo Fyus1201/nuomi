@@ -167,10 +167,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (self.navigationController.navigationBar.alpha == 0)
-    {
-        self.navigationController.navigationBar.alpha = 1;
-    }
+    self.navigationController.navigationBarHidden = NO;
     
     //[self setupnav];//初始化头部
     [self.cell2 addTimer];

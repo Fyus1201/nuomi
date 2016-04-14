@@ -71,9 +71,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     self.navigationController.navigationBarHidden = YES;
-    
     FYData *item = [[FYDataModel sharedStore] allItems][0];
     
     if ([item.searchTerm length] > 0)
@@ -91,8 +89,6 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    self.navigationController.navigationBarHidden = NO;
     
     FYData *item = [[FYDataModel sharedStore] allItems][0];
     item.searchTerm = @"";
@@ -381,6 +377,16 @@
 -(void)keyboardChangAppear:(NSNotification *)notification//开变
 {
   // NSLog(@"开变%f",[self keyboardEndingFrameHeight:[notification userInfo]]);
+    
+    CGRect oldFrame = CGRectMake(-1, [UIScreen mainScreen].bounds.size.height-60, [UIScreen mainScreen].bounds.size.width+1, 60);
+    
+    CGRect currentFrame = self.footView.frame;
+    CGFloat change = [self keyboardEndingFrameHeight:[notification userInfo]];
+    currentFrame.origin.y = oldFrame.origin.y - change ;
+    //if (currentFrame.origin.y < self.footView.frame.origin.y)
+    //{
+        self.footView.frame = currentFrame;
+    //}
 
 }
 
@@ -391,6 +397,7 @@
 
 -(void)keyboardWillAppear:(NSNotification *)notification//出现
 {
+    /*
     CGRect oldFrame = CGRectMake(-1, [UIScreen mainScreen].bounds.size.height-60, [UIScreen mainScreen].bounds.size.width+1, 60);
     
     CGRect currentFrame = self.footView.frame;
@@ -399,7 +406,7 @@
     if (currentFrame.origin.y < self.footView.frame.origin.y)
     {
         self.footView.frame = currentFrame;
-    }
+    }*/
     //NSLog(@"开秀%f",[self keyboardEndingFrameHeight:[notification userInfo]]);
 
 }

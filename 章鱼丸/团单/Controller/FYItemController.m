@@ -118,6 +118,7 @@
     [super viewWillAppear:animated];
 
     //self.navigationController.title = @"";//他的图层被移除了
+    self.navigationController.navigationBarHidden = NO;
     self.navigationController.navigationBar.alpha = 0.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
 
     if (self.led == YES)

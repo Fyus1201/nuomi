@@ -111,9 +111,6 @@
     {
         [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
     }
-
-    
-    
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
     
@@ -148,7 +145,6 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBarHidden = NO;
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;//退出当前ViewController后变回黑色
     
     FYData *item = [[FYDataModel sharedStore] allItems][0];

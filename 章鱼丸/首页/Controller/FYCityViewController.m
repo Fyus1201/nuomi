@@ -36,7 +36,7 @@
 -(void)initNav
 {
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 64)];
-    backView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:0.9];
+    backView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1.0];
     [self.view addSubview:backView];
     //退出
     UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
