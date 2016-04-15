@@ -455,6 +455,7 @@
 		5F918CA81C8968FB002D73FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F918CA61C8968FB002D73FC /* LaunchScreen.storyboard */; };
 		5F918CB31C8968FB002D73FC /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F918CB21C8968FB002D73FC /* ___Tests.m */; };
 		5F918CBE1C8968FB002D73FC /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F918CBD1C8968FB002D73FC /* ___UITests.m */; };
+		5F96AF4C1CC0F2E1002E2498 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F96AF4B1CC0F2E1002E2498 /* JavaScriptCore.framework */; };
 		5FA0B2D21CBE676700F22DBD /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */; };
 /* End PBXBuildFile section */
 
@@ -981,6 +982,7 @@
 		5F918CB91C8968FB002D73FC /* 章鱼丸UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "章鱼丸UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F918CBD1C8968FB002D73FC /* ___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UITests.m"; sourceTree = "<group>"; };
 		5F918CBF1C8968FB002D73FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F96AF4B1CC0F2E1002E2498 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		5FA0B2D01CBE676700F22DBD /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Awesome.h"; path = "首页/Other/UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Awesome.m"; path = "首页/Other/UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		819B8D4CD0AA118B7E7C1E21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -991,6 +993,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F96AF4C1CC0F2E1002E2498 /* JavaScriptCore.framework in Frameworks */,
 				5F7E5AF81C9D92310059947B /* libz.1.tbd in Frameworks */,
 				5F7E5AF21C9D914A0059947B /* CoreGraphics.framework in Frameworks */,
 				5F7E5AF01C9D91410059947B /* QuartzCore.framework in Frameworks */,
@@ -1027,6 +1030,7 @@
 		5B5B2ECC4E844949A962EBB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F96AF4B1CC0F2E1002E2498 /* JavaScriptCore.framework */,
 				5F7E5AF71C9D92310059947B /* libz.1.tbd */,
 				5F43F6621CAFFEB00007BD53 /* libPods.a */,
 				5F43F6611CAFFEB00007BD53 /* iflyMSC.framework */,

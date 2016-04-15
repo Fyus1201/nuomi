@@ -9,6 +9,7 @@
 #import "FYWebViewController.h"
 #import "FYDengluViewController.h"
 #import "FYSearchViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>  
 
 @interface FYWebViewController ()<UIWebViewDelegate, UIScrollViewDelegate>
 
@@ -157,6 +158,12 @@
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitOfflineWebApplicationCacheEnabled"];//自己添加的，原文没有提到。
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
+    /*
+    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
+    [context evaluateScript:alertJS];//通过oc方法调用js的alert
+    */
     [_activityView stopAnimating];//圈圈  转啊转
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -171,16 +178,19 @@
     NSRange range = [cont rangeOfString:@"bainuo://"];
     if (range.location != NSNotFound)
     {
+        [webView stringByEvaluatingJavaScriptFromString:@"alert('跳转糯米，失败')"];
         return NO;//你tm别想跳到糯米app上,233333
     }
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
     //NSLog(@"你好啊%@",theTitle);
-    //[webView stringByEvaluatingJavaScriptFromString:@"alert('测试章鱼')"];//可以出弹窗
-    //    self.title = theTitle;
+    
+    //[webView stringByEvaluatingJavaScriptFromString:@"alert('测试章鱼')"];//js oc交互 可以出弹窗
+    //self.title = theTitle;
     //NSLog(@"测试2:   %@",theTitle);
     
    // NSString *shuju=[webView stringByEvaluatingJavaScriptFromString:@"document"];
     //NSLog(@"数据大爷%@",cont);
+    
     [_activityView startAnimating];
     return YES;
 }

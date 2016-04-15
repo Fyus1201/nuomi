@@ -53,7 +53,6 @@
     [super viewDidLoad];
     
     [self getData:self.httpUrl withHttpArg:self.HttpArg];
-    [self getRecommendData];
     
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"返回";
@@ -374,15 +373,9 @@
 #pragma mark - tableview
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (_itemModel)
+    if (_likeArray)
     {
-        if (_likeArray)
-        {
-            return 4;
-        }else
-        {
-            return 3;
-        }
+        return 4;
     }else
     {
         return 0;
@@ -463,13 +456,13 @@
 {
     if (indexPath.section == 0)
     {
-        
         FYJiageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell0" forIndexPath:indexPath];
         
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
         [cell setAct:_itemModel];
         return cell;
-    }else if(indexPath.section == 1)
+    }
+    else if(indexPath.section == 1)
     {
         if (indexPath.row == 0)
         {
@@ -629,6 +622,7 @@
                                                   //[SVProgressHUD showInfoWithStatus:error.description];
                                                   [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
+                                                  [self.navigationController popViewControllerAnimated:YES];
                                                   
                                               });
                                           } else {
@@ -639,11 +633,11 @@
                                               
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新成功4 ");
-                                                      
+                                                  
+                                                  [self getRecommendData];
                                                   [_imageView sd_setImageWithURL:[NSURL URLWithString:_itemModel[@"image"]] placeholderImage:[UIImage imageNamed:@"ugc_photo"]];
                                                 
                                                   [self initTitle];
-                                                  [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
                                                   
                                                   [self.tableView reloadData];
                                                   
@@ -670,6 +664,7 @@
                                               NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败3 ");
+                                                  [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
                                                   [self.navigationController popViewControllerAnimated:YES];
                                                   
@@ -683,6 +678,7 @@
                                               
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新成功3 ");
+                                                  [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
                                                   [self.tableView reloadData];
                                                 
                                               });
@@ -699,7 +695,7 @@
     CGFloat height1 = [[self.webView1 stringByEvaluatingJavaScriptFromString:@"document.body.offsetHeight"] floatValue];
     self.webView1.frame = CGRectMake(self.webView1.frame.origin.x,self.webView1.frame.origin.y, [UIScreen mainScreen].bounds.size.width, height1+25);
     
-    //Html里的js 导致的内存泄漏
+    //html里的js 导致的内存泄漏
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"WebKitCacheModelPreferenceKey"];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitDiskImageCacheEnabled"];//自己添加的，原文没有提到。
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitOfflineWebApplicationCacheEnabled"];//自己添加的，原文没有提到。
