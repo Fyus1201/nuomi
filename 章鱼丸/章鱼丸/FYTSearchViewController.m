@@ -90,7 +90,13 @@
     [super viewWillAppear:animated];
     self.navigationItem.title = @"";
     self.navigationController.navigationBarHidden = YES;
+    /*另外一种方法
+    //可以在需要隐藏navigationBar的viewController里面的viewWillAppear添加
+    [self.navigationController.view sendSubviewToBack:self.navigationController.navigationBar];
     
+    //然后在viewWillDisappear
+    [self.navigationController.view bringSubviewToFront:self.navigationController.navigationBar];
+    */
 }
 
 -(void)viewWillDisappear:(BOOL)animated
