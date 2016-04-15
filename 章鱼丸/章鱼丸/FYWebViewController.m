@@ -100,7 +100,6 @@
     }
     
     self.navigationItem.rightBarButtonItems = @[item1];
-    self.navigationItem.title = self.name;
 }
 
 -(void)rightBtnClick1:(UIButton *)button
@@ -136,9 +135,20 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     NSLog(@"开始加载");
+
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
+    
+    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
+    if ([theTitle length] != 0)
+    {
+        self.navigationItem.title = theTitle;
+    }else
+    {
+        self.navigationItem.title = self.name;
+    }
+    
     NSLog(@"完成加载");
     
     //Html里的js 导致的内存泄漏
@@ -163,8 +173,8 @@
     {
         return NO;//你tm别想跳到糯米app上,233333
     }
-    
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
+    //NSLog(@"你好啊%@",theTitle);
     //[webView stringByEvaluatingJavaScriptFromString:@"alert('测试章鱼')"];//可以出弹窗
     //    self.title = theTitle;
     //NSLog(@"测试2:   %@",theTitle);

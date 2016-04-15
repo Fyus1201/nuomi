@@ -89,7 +89,6 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
     FYData *item = [[FYDataModel sharedStore] allItems][0];
     item.searchTerm = @"";
 }

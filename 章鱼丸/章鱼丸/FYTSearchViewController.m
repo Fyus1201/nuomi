@@ -11,7 +11,6 @@
 #import "FYWebViewController.h"
 
 #import "FYShuaxingHeader.h"
-
 #import "FYDengluViewController.h"
 
 #import "FYJBiaotiTableViewCell.h"
@@ -101,6 +100,8 @@
     self.navigationController.navigationBarHidden = NO;
 }
 
+
+
 #pragma mark - 初始化头部
 -(void)setupnav
 {
@@ -131,12 +132,13 @@
     [closeBtn addTarget:self action:@selector(OnCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.NavView addSubview:closeBtn];
 }
-
+#pragma mark - 推出机制
 -(void)OnCloseBtn:(UIButton *)sender//推出设置
 {
     //[self.navigationController popViewControllerAnimated:YES];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
+
 
 -(UIImage*) OriginImage:(UIImage *)image scaleToSize:(CGSize)size
 {
@@ -150,7 +152,7 @@
     
     return scaledImage;   //返回的就是已经改变的图片
 }
-
+//搜索
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     

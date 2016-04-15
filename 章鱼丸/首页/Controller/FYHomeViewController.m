@@ -257,7 +257,7 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:252/255.0 green:74/255.0 blue:132/255.0 alpha:0.9];//里面的item颜色
     self.navigationController.navigationBar.translucent = NO;//是否为半透明
-    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;//默认开启,侧滑返回
     /*
     //左边按钮
     UIButton *leftbtn = [UIButton buttonWithType:UIButtonTypeCustom];
