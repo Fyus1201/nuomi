@@ -372,7 +372,6 @@
 		5F43F9481CB000280007BD53 /* home-10-06.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F7E21CB000270007BD53 /* home-10-06.png */; };
 		5F43F9491CB000280007BD53 /* home-10-07.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F7E31CB000270007BD53 /* home-10-07.png */; };
 		5F43F94A1CB000280007BD53 /* home-10-08.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F7E41CB000270007BD53 /* home-10-08.png */; };
-		5F43F9521CB002A50007BD53 /* FYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F94D1CB002A50007BD53 /* FYTabBarController.m */; };
 		5F43F9531CB002A50007BD53 /* FYTSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F94F1CB002A50007BD53 /* FYTSearchViewController.m */; };
 		5F43F9541CB002A50007BD53 /* FYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9511CB002A50007BD53 /* FYWebViewController.m */; };
 		5F43F9591CB002D50007BD53 /* ico_make.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F9561CB002D50007BD53 /* ico_make.png */; };
@@ -845,8 +844,6 @@
 		5F43F7E21CB000270007BD53 /* home-10-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-10-06.png"; sourceTree = "<group>"; };
 		5F43F7E31CB000270007BD53 /* home-10-07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-10-07.png"; sourceTree = "<group>"; };
 		5F43F7E41CB000270007BD53 /* home-10-08.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-10-08.png"; sourceTree = "<group>"; };
-		5F43F94C1CB002A50007BD53 /* FYTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTabBarController.h; sourceTree = "<group>"; };
-		5F43F94D1CB002A50007BD53 /* FYTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTabBarController.m; sourceTree = "<group>"; };
 		5F43F94E1CB002A50007BD53 /* FYTSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYTSearchViewController.h; sourceTree = "<group>"; };
 		5F43F94F1CB002A50007BD53 /* FYTSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYTSearchViewController.m; sourceTree = "<group>"; };
 		5F43F9501CB002A50007BD53 /* FYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWebViewController.h; sourceTree = "<group>"; };
@@ -1631,8 +1628,6 @@
 		5F43F94B1CB002A50007BD53 /* 章鱼丸 */ = {
 			isa = PBXGroup;
 			children = (
-				5F43F94C1CB002A50007BD53 /* FYTabBarController.h */,
-				5F43F94D1CB002A50007BD53 /* FYTabBarController.m */,
 				5F43F94E1CB002A50007BD53 /* FYTSearchViewController.h */,
 				5F43F94F1CB002A50007BD53 /* FYTSearchViewController.m */,
 				5F43F9501CB002A50007BD53 /* FYWebViewController.h */,
@@ -2595,7 +2590,6 @@
 				5F43F9CF1CB007390007BD53 /* FYXuanViewController.m in Sources */,
 				5F43F9621CB0039F0007BD53 /* IATConfig.m in Sources */,
 				5F918C9A1C8968FB002D73FC /* AppDelegate.m in Sources */,
-				5F43F9521CB002A50007BD53 /* FYTabBarController.m in Sources */,
 				5F43F9FD1CB008620007BD53 /* FYHomeMenuCell.m in Sources */,
 				5F43F9771CB003E20007BD53 /* FYSearchViewController.m in Sources */,
 				5F43F9531CB002A50007BD53 /* FYTSearchViewController.m in Sources */,

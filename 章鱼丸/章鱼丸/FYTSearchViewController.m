@@ -158,12 +158,13 @@
     
     return scaledImage;   //返回的就是已经改变的图片
 }
-//搜索
+#pragma mark - 搜索
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     
     FYData *item = [[FYDataModel sharedStore] allItems][0];
     
+    [self.history removeAllObjects];
     [self.history addObjectsFromArray:[NSKeyedUnarchiver unarchiveObjectWithData:item.historyData]];
     
     NSString *searchTerm = searchBar.text;

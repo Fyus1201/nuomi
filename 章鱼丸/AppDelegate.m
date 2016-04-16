@@ -15,7 +15,6 @@
 
 #import "FYWebViewController.h"
 
-#import "FYTabBarController.h"
 #import "FYDataModel.h"
 #import "FYData.h"
 #import "iflyMSC/iflyMSC.h"
