@@ -9,11 +9,13 @@
 #import "FYWebViewController.h"
 #import "FYDengluViewController.h"
 #import "FYSearchViewController.h"
-#import <JavaScriptCore/JavaScriptCore.h>  
+#import <JavaScriptCore/JavaScriptCore.h> 
+
+#import "FYWebObject.h"
 
 @interface FYWebViewController ()<UIWebViewDelegate, UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIActivityIndicatorView *activityView;
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;//旋转轮廓
 
 @end
 
@@ -164,6 +166,44 @@
     NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
     [context evaluateScript:alertJS];//通过oc方法调用js的alert
     */
+    
+    //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
+    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    /*
+    //js调用iOS
+    //第一种情况
+    //其中test1就是js的方法名称，赋给是一个block 里面是iOS代码
+    context[@"test1"] = ^() {
+        NSArray *args = [JSContext currentArguments];//输出当前参数
+        for (id obj in args)
+        {
+            NSLog(@"%@",obj);
+        }
+    };
+    //首先准备一下js代码，来调用js的函数test1 然后执行
+    //一个参数
+    NSString *jsFunctStr=@"test1('参数1')";
+    [context evaluateScript:jsFunctStr];
+    
+    //二个参数
+    NSString *jsFunctStr1=@"test1('参数a','参数b')";
+    [context evaluateScript:jsFunctStr1];
+    */
+    
+    //第二种情况，js是通过对象调用的，我们假设js里面有一个对象 testobject 在调用方法
+    //首先创建我们新建类的对象，将他赋值给js的对象
+    /*
+    FYWebObject *testJO=[FYWebObject new];
+    context[@"testobject"]=testJO;
+    
+    //同样我们也用刚才的方式模拟一下js调用方法
+    NSString *jsStr1=@"testobject.TestNOParameter()";
+    [context evaluateScript:jsStr1];
+    NSString *jsStr2=@"testobject.TestOneParameter('参数1')";
+    [context evaluateScript:jsStr2];
+    NSString *jsStr3=@"testobject.TestTowParameterSecondParameter('参数A','参数B')";
+    [context evaluateScript:jsStr3];
+    */
     [_activityView stopAnimating];//圈圈  转啊转
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -174,13 +214,19 @@
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    
     NSString *cont = [request.URL absoluteString];//url转string
     NSRange range = [cont rangeOfString:@"bainuo://"];
     if (range.location != NSNotFound)
     {
-        [webView stringByEvaluatingJavaScriptFromString:@"alert('跳转糯米，失败')"];
+        [webView stringByEvaluatingJavaScriptFromString:@"alert('跳转糯米失败,章鱼禁止跳转')"];
         return NO;//你tm别想跳到糯米app上,233333
     }
+    
+    //JSContext *context=[webView valueForKeyPath:@"bainuo://"];
+    //NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
+    //[context evaluateScript:alertJS];//通过oc方法调用js的alert
+    
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
     //NSLog(@"你好啊%@",theTitle);
     

@@ -92,6 +92,7 @@
 -(void)OnCloseBtn:(UIButton *)sender//推出设置
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)OnZhuceBtn:(UIButton *)sender
 {

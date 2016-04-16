@@ -22,19 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-uB-U5d">
-                    <rect key="frame" x="137" y="558" width="101" height="96"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="101" id="ZQp-NJ-0f0"/>
-                        <constraint firstAttribute="height" constant="96" id="stZ-Y4-Tn4"/>
-                    </constraints>
-                    <state key="normal" title="voicesearch" image="voice_search.png"/>
-                    <connections>
-                        <action selector="invoiceSearch:" destination="-1" eventType="touchDown" id="q3Y-WU-1Bf"/>
-                        <action selector="outvoiceSearch:" destination="-1" eventType="touchUpInside" id="CP2-DC-1sa"/>
-                        <action selector="outvoiceSearch:" destination="-1" eventType="touchUpOutside" id="pA3-nX-OF7"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPl-Gz-oTd">
                     <rect key="frame" x="320" y="30" width="40" height="40"/>
                     <constraints>
@@ -108,6 +95,19 @@
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5x-uB-U5d">
+                    <rect key="frame" x="137" y="558" width="101" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="101" id="ZQp-NJ-0f0"/>
+                        <constraint firstAttribute="height" constant="96" id="stZ-Y4-Tn4"/>
+                    </constraints>
+                    <state key="normal" title="voicesearch" image="voice_search.png"/>
+                    <connections>
+                        <action selector="invoiceSearch:" destination="-1" eventType="touchDown" id="q3Y-WU-1Bf"/>
+                        <action selector="outvoiceSearch:" destination="-1" eventType="touchUpInside" id="CP2-DC-1sa"/>
+                        <action selector="outvoiceSearch:" destination="-1" eventType="touchUpOutside" id="pA3-nX-OF7"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

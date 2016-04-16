@@ -143,9 +143,8 @@
     }];
 }
 
--(void)initTabbarItem{
-    
-    
+-(void)initTabbarItem
+{
     FYHomeViewController *home0 = [[FYHomeViewController alloc]init];
     [self controller:home0 title:@"首页" image:@"icon_tab_shouye_normal" selectedimage:@"icon_tab_shouye_highlight"];
     

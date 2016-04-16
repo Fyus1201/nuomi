@@ -456,6 +456,7 @@
 		5F918CB31C8968FB002D73FC /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F918CB21C8968FB002D73FC /* ___Tests.m */; };
 		5F918CBE1C8968FB002D73FC /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F918CBD1C8968FB002D73FC /* ___UITests.m */; };
 		5F96AF4C1CC0F2E1002E2498 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F96AF4B1CC0F2E1002E2498 /* JavaScriptCore.framework */; };
+		5F96AF4F1CC11DE7002E2498 /* FYWebObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96AF4E1CC11DE7002E2498 /* FYWebObject.m */; };
 		5FA0B2D21CBE676700F22DBD /* UINavigationBar+Awesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */; };
 /* End PBXBuildFile section */
 
@@ -983,6 +984,8 @@
 		5F918CBD1C8968FB002D73FC /* ___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UITests.m"; sourceTree = "<group>"; };
 		5F918CBF1C8968FB002D73FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F96AF4B1CC0F2E1002E2498 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		5F96AF4D1CC11DE7002E2498 /* FYWebObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYWebObject.h; sourceTree = "<group>"; };
+		5F96AF4E1CC11DE7002E2498 /* FYWebObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWebObject.m; sourceTree = "<group>"; };
 		5FA0B2D01CBE676700F22DBD /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Awesome.h"; path = "首页/Other/UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Awesome.m"; path = "首页/Other/UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
 		819B8D4CD0AA118B7E7C1E21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -1634,6 +1637,8 @@
 				5F43F94F1CB002A50007BD53 /* FYTSearchViewController.m */,
 				5F43F9501CB002A50007BD53 /* FYWebViewController.h */,
 				5F43F9511CB002A50007BD53 /* FYWebViewController.m */,
+				5F96AF4D1CC11DE7002E2498 /* FYWebObject.h */,
+				5F96AF4E1CC11DE7002E2498 /* FYWebObject.m */,
 			);
 			path = "章鱼丸";
 			sourceTree = "<group>";
@@ -2575,6 +2580,7 @@
 				5F43F9C91CB006E50007BD53 /* FYTuijianTableViewCell.m in Sources */,
 				5F43F99B1CB004F90007BD53 /* Model.xcdatamodeld in Sources */,
 				5F43F9761CB003E20007BD53 /* FYSaoViewController.m in Sources */,
+				5F96AF4F1CC11DE7002E2498 /* FYWebObject.m in Sources */,
 				5F43F98D1CB0041D0007BD53 /* FYHomeShopModel.m in Sources */,
 				5F43F9B61CB006050007BD53 /* FYMe0Cell.m in Sources */,
 				5F43F9741CB003E20007BD53 /* FYiflyMSCViewController.m in Sources */,
