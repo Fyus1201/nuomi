@@ -62,6 +62,8 @@
 @property (nonatomic, strong) FYEbannerViewCell *cell6;
 @property (nonatomic, strong) FYFiveViewCell *cell7;
 
+@property (nonatomic, strong) UIView *yourSuperView;
+@property (nonatomic, strong) UIImageView *imaView;
 @property (nonatomic) NSURLSession *session;
 
 /**
@@ -93,6 +95,8 @@
     [self setupnav];//初始化头部
     [self initTableview];//初始化表格
     [self setNav];//真正的头部
+    
+    [self initAdvView];
     
     self.navigationController.interactivePopGestureRecognizer.delegate =(id)self;
     
@@ -168,6 +172,48 @@
     }
 
 }
+
+#pragma mark - 启动动画
+
+-(void)initAdvView
+{
+    _yourSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, -64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height+64)];
+    _yourSuperView.backgroundColor = [UIColor whiteColor];
+    NSMutableArray *refreshingImages = [NSMutableArray array];
+    for (NSUInteger i = 1; i<=9; i++)
+    {
+        UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"icon_hud_%zd", i]];
+        [refreshingImages addObject:image];
+    }
+    _imaView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2-100, [UIScreen mainScreen].bounds.size.height/2-70, 200, 120)];
+    _imaView.animationImages = refreshingImages;
+    [_yourSuperView addSubview:_imaView];
+    [self.view addSubview:_yourSuperView];
+    //[self.view bringSubviewToFront:_yourSuperView];
+    //[self.view insertSubview:_yourSuperView atIndex:0];
+    
+    _yourSuperView.hidden = NO;
+    //设置执行一次完整动画的时长
+    _imaView.animationDuration = 9*0.15;
+    //动画重复次数 （0为重复播放）
+    _imaView.animationRepeatCount = 10;
+    [_imaView startAnimating];
+    
+    
+}
+
+-(void)removeAdvImage
+{
+    [UIView animateWithDuration:0.3f animations:^{
+        _yourSuperView.transform = CGAffineTransformMakeScale(0.5f, 0.5f);
+        _yourSuperView.alpha = 0.f;
+    } completion:^(BOOL finished) {
+        //[_yourSuperView removeFromSuperview];//会直接移除，不能再次使用，故使用隐藏
+        _yourSuperView.hidden = YES;
+    }];
+}
+
+
 
  #pragma mark - 初始化
 -(void)initData
@@ -1633,6 +1679,7 @@
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败2 ");
                                                   //[SVProgressHUD showInfoWithStatus:error.description];
+                                                [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
                                                   [self.tableView.mj_header endRefreshing];
                                               });
@@ -1649,7 +1696,7 @@
                                               //NSLog(@"%@",_homeGroupM);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新成功2 ");
-                                                  
+                                                [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
                                                   [self.tableView reloadData];
                                                   [self.tableView.mj_header endRefreshing];
                                               });
