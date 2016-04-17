@@ -174,7 +174,7 @@
     self.footView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.footView];
     
-    self.footView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:0.9];
+    self.footView.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.0];
     self.footView.layer.borderWidth = 0.5;//边框线
     self.footView.layer.borderColor = [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:0.9].CGColor;
     //语音
@@ -226,12 +226,25 @@
     [self.history insertObject:searchTerm atIndex:0];//插入一个对象
     //[self.history addObject:searchTerm];
     
+    NSSet *historySet = [NSSet setWithArray:self.history];
+    if (historySet.count == self.history.count)//判断是否重复，set无序，array有序单可以重复
+    {
+        
+    }else
+    {
+        [self.history removeObject:searchBar.text];//删除重复对象
+        NSString *searchTerm = searchBar.text;
+        [self.history insertObject:searchTerm atIndex:0];//插入一个对象
+    }
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.history];
     item.historyData = data;
     
+    [self.history removeAllObjects];
+    [self.history addObjectsFromArray:[NSKeyedUnarchiver unarchiveObjectWithData:item.historyData]];//转化成数组
+    
     [self.tableView reloadData];
     
-    NSLog(@"执行 %@",self.history);
+    //NSLog(@"执行 %@",self.history);
     
     FYTSearchViewController *tuans = [[FYTSearchViewController alloc] init];
     tuans.searchTuan = searchTerm;

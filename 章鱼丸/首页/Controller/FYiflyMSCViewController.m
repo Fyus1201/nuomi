@@ -225,7 +225,18 @@
         NSMutableArray *history = [[NSMutableArray alloc] init];
         [history addObjectsFromArray:[NSKeyedUnarchiver unarchiveObjectWithData:item.historyData]];
         [history insertObject:_textView.text atIndex:0];//插入一个对象
+         NSSet *historySet = [NSSet setWithArray:history];
         //[self.history addObject:searchTerm];
+        
+        if (historySet.count == history.count)//判断是否重复，set无序，array有序单可以重复
+        {
+
+        }else
+        {
+            [history removeObject:_textView.text];//删除重复对象
+            NSString *searchTerm = _textView.text;
+            [history insertObject:searchTerm atIndex:0];//插入一个对象
+        }
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:history];
         item.historyData = data;
