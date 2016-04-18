@@ -177,7 +177,7 @@
 
 -(void)initAdvView
 {
-    _yourSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, -64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height+64)];
+    _yourSuperView = [[UIView alloc] initWithFrame:CGRectMake(0, -0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height+0)];
     _yourSuperView.backgroundColor = [UIColor whiteColor];
     NSMutableArray *refreshingImages = [NSMutableArray array];
     for (NSUInteger i = 1; i<=9; i++)
@@ -286,6 +286,12 @@
 
 -(void)loadNewData
 {
+    //清除缓存：
+    [[NSURLCache sharedURLCache]removeAllCachedResponses];
+    //然后检查缓存是否被清：
+    NSInteger sizeInteger = [[NSURLCache sharedURLCache] currentDiskUsage];
+    float sizeInMB = sizeInteger / (1024.0f * 1024.0f);
+    NSLog(@"缓存%f",sizeInMB);
     
     [self getHotData2];
     [self getRecommendData];
@@ -533,6 +539,7 @@
                 self.NavView.alpha = 1.0;
             }
             self.NavView.backgroundColor = [self.NavView.backgroundColor colorWithAlphaComponent:offsetY / 120];
+            
         }
         
         //图标颜色转换

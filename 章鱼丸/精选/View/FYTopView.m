@@ -76,6 +76,7 @@
 #pragma mark - UITableViewDataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+   // NSLog(@"%ld--%ld",(long)_bigSelectedIndex,tableView.tag);
     if (tableView.tag == 10)
     {
         if ( _bigGroupArray.count == 0)
@@ -86,16 +87,21 @@
             return _bigGroupArray.count-1;
         }
     }
-    else
+    else if(tableView.tag == 20)
     {
-        NSArray *list = _bigGroupArray[_bigSelectedIndex+1][@"array"];
-        if (list == nil)
+        if ([_bigGroupArray[1][@"array"] count] > 0)
         {
-            return 0;
+            NSArray *list = _bigGroupArray[_bigSelectedIndex+1][@"array"];
+            return list.count;
+            
         }else
         {
-            return list.count;
+            return 0;
         }
+        
+    }else
+    {
+        return 0;
     }
 }
 
@@ -201,9 +207,13 @@
         
         if ([_bigGroupArray[0] integerValue] != 1)
         {
-            [self.tableViewOfDetail reloadData];
             [self.delegate tableView:tableView didSelectRowAtIndexPath:indexPath withId:_bigGroupArray[0] withName:_bigGroupArray[indexPath.row+1][@"name"]];
+            
             [self.tableViewOfDetail reloadData];
+            self.tableViewOfDetail.tag = 0;
+            self.tableViewOfGroup.tag = 0;
+            [self.tableViewOfDetail removeFromSuperview];
+            [self.tableViewOfGroup removeFromSuperview];
         }else
         {
             [self.tableViewOfDetail reloadData];
@@ -217,17 +227,20 @@
         [self.delegate tableView:tableView didSelectRowAtIndexPath:newIndexPath withId:_bigGroupArray[0] withName:_bigGroupArray[_bigSelectedIndex+1][@"array"][indexPath.row]];
         
         [self.tableViewOfDetail reloadData];
+        self.tableViewOfDetail.tag = 0;
+        self.tableViewOfGroup.tag = 0;
+        [self.tableViewOfDetail removeFromSuperview];
+        [self.tableViewOfGroup removeFromSuperview];
     }
 }
 
-- (void)setBigGroupArray:(NSArray *)bigGroupArray
+- (void)setBigGroupArray:(NSMutableArray *)bigGroupArray
 {
-    _bigGroupArray = bigGroupArray;
+    _bigGroupArray = [NSMutableArray arrayWithArray:bigGroupArray];
     
     if ([_bigGroupArray[0] integerValue] == 1)
     {
-        [self initViews];
-
+        
         if (_topArray)
         {
             NSIndexPath *indexPath = _topArray[[_bigGroupArray[0] intValue]];
@@ -238,15 +251,18 @@
             _bigSelectedIndex = 0;
             _smallSelectedIndex = 0;
         }
+        
+        [self initViews];
 
+        //设置初始点击状态
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:_bigSelectedIndex inSection:0];
         [self.tableViewOfGroup selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
         
         NSIndexPath *detailIndexPath = [NSIndexPath indexPathForRow:_smallSelectedIndex inSection:0];
         [self.tableViewOfDetail selectRowAtIndexPath:detailIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+
     }else
     {
-        [self initView];
         
         if (_topArray)
         {
@@ -256,6 +272,9 @@
         {
             _bigSelectedIndex = 0;
         }
+        
+        [self initView];
+        
         NSIndexPath *selectedIndexPath = [NSIndexPath indexPathForRow:_bigSelectedIndex inSection:0];
         [self.tableViewOfGroup selectRowAtIndexPath:selectedIndexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }

@@ -195,7 +195,7 @@
     }else
     {
         NSLog(@"不存在");
-        
+        /*
         NSMutableArray *refreshingImages = [NSMutableArray array];
         for (NSUInteger i = 1; i<=9; i++)
         {
@@ -215,7 +215,7 @@
         [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:2];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [self getLoadingImage];
-        });
+         });*/
     }
 }
 

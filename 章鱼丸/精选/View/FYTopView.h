@@ -20,7 +20,7 @@
 
 @property(nonatomic, assign) id<FYTopViewDelegate> delegate;
 
-@property (nonatomic, strong) NSArray *bigGroupArray;//获取右侧数据
-@property (nonatomic, strong) NSArray *topArray;//获取左侧数据
+@property (nonatomic, strong) NSMutableArray *bigGroupArray;//获取右侧数据
+@property (nonatomic, strong) NSMutableArray *topArray;//获取左侧数据
 
 @end

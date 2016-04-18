@@ -168,7 +168,7 @@
     */
     
     //首先创建JSContext 对象（此处通过当前webView的键获取到jscontext）
-    JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
+    //JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
     /*
     //js调用iOS
     //第一种情况
@@ -227,7 +227,7 @@
     //NSString *alertJS=@"alert('test js OC')"; //准备执行的js代码
     //[context evaluateScript:alertJS];//通过oc方法调用js的alert
     
-    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
+    //NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];//JavaScript document title 属性：得到当前文档的标题
     //NSLog(@"你好啊%@",theTitle);
     
     //[webView stringByEvaluatingJavaScriptFromString:@"alert('测试章鱼')"];//js oc交互 可以出弹窗

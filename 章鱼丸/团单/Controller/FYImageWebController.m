@@ -55,13 +55,13 @@
 
     
 }
-/*
+
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.navigationController.navigationBar.alpha = 1.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;//退出当前ViewController后变回黑色
-}
+    //self.navigationController.navigationBar.alpha = 1.000;//将其设置为透明，采用自定义（直接将其隐藏，不能使用返回手势）
+    //[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;//退出当前ViewController后变回黑色
+}/*
 - (void)viewDidDisappear:(BOOL)animated//无效
 {
     [super viewDidDisappear:animated];
