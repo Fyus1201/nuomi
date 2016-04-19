@@ -159,8 +159,9 @@
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBackView:)];
             [backView addGestureRecognizer:tap];
             
-            backView.layer.borderColor = [UIColor whiteColor].CGColor;
-            backView.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:0.9];
+            backView.layer.borderWidth = 0.5;//边框线
+            backView.layer.borderColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:0.9].CGColor;
+            backView.backgroundColor = [UIColor whiteColor];
             
             [self addSubview:backView];
 

@@ -101,7 +101,8 @@
         EBtn.frame = CGRectMake(0, 0, 20, 20);
         item1 = [[UIBarButtonItem alloc]initWithCustomView:EBtn];
     }
-    
+    //self.navigationItem.backBarButtonItem = [self.navigationItem.backBarButtonItem initWithTitle:@"返回" style: UIBarButtonItemStylePlain target:self action:@selector(forwardButtonPush:)];
+   // [(UIButton *)self.navigationItem.backBarButtonItem addTarget:self action:@selector(forwardButtonPush:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItems = @[item1];
 }
 
@@ -239,6 +240,41 @@
     
     [_activityView startAnimating];
     return YES;
+}
+
+#pragma mark - UIWebView 前进 后退 刷新 取消
+
+- (void)backButtonPush:(UIButton *)button
+{
+    if (self.webView.canGoBack)
+    {
+        [self.webView goBack];
+    }
+}
+- (void)forwardButtonPush:(UIButton *)button
+{
+    if (self.webView.canGoForward)
+    {
+        [self.webView goForward];
+    }else
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+- (void)reloadButtonPush:(UIButton *)button
+{
+    
+    [self.webView reload];
+}
+
+- (void)stopButtonPush:(UIButton *)button
+{
+    
+    if (self.webView.loading)
+    {
+        [self.webView stopLoading];
+    }
+    
 }
 
 @end
