@@ -1697,7 +1697,7 @@
                                               _homeGroupM = [MTLJSONAdapter modelOfClass:[FYHomeGroupModel class] fromJSONDictionary:jsonObject[@"data"] error:nil];
                                               
                                               _topenModel = _homeGroupM.topten;
-                                              
+
                                               //FYHomeActivityListInfoModel *activity = _homeGroupM.activityGroup[@"listInfo"][1];
                                               //NSArray *adf = _homeGroupM.daoDianfu;
                                               //NSLog(@"%@",_homeGroupM);

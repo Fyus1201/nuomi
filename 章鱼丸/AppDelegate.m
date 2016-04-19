@@ -57,6 +57,27 @@
     return YES;
 }
 
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    NSLog(@"%@", [url absoluteString]);
+    
+    // 在 host 等于 tuan 时，说明一个宝贝详情的 url，
+    // 那么就使用本地的 ViewController 来显示
+    if ([[url host] isEqualToString:@"tuan"])
+    {
+        NSString *urlStr = @"http://t10.nuomi.com/webapp/na/topten?from=fr_na_t10tab&sizeLimit=8&version=2&needstorecard=1&areaId=100010000&location=39.989430,116.324470&bn_aid=ios&bn_v=5.13.0&bn_chn=com_dot_apple";
+        NSURL *url = [NSURL URLWithString: urlStr];
+        FYWebViewController *web0 = [[FYWebViewController alloc]init];
+        [web0 setURL:url];
+        web0.name = @"精选抢购";
+        web0.LED = YES;
+        web0.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
+        [self.window.rootViewController.childViewControllers[0] pushViewController:web0 animated:YES];//1.点击，相应跳转
+    }
+    return YES;
+}
+
  - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler
 {
     //NSLog(@"选择了3Dtouch功能--%@-%@",shortcutItem.type,self.window.rootViewController.childViewControllers[0]);

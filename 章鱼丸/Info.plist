@@ -2,6 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>zhangyu.app</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>zhangyu</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIApplicationShortcutItems</key>
 	<array/>
 	<key>CFBundleDevelopmentRegion</key>
