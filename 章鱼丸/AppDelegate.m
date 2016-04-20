@@ -74,8 +74,12 @@
         web0.LED = YES;
         web0.hidesBottomBarWhenPushed = YES;//隐藏 tabBar 在navigationController结构中
         [self.window.rootViewController.childViewControllers[0] pushViewController:web0 animated:YES];//1.点击，相应跳转
+        return YES;
+    }else
+    {
+        return NO;
     }
-    return YES;
+    
 }
 
  - (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler
