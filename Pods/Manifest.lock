@@ -10,6 +10,7 @@ PODS:
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
   - SVProgressHUD (1.1.3)
+  - UMengAnalytics (3.6.6)
   - WebViewJavascriptBridge (5.0.5)
 
 DEPENDENCIES:
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Reachability (~> 3.0.0)
   - SDWebImage
   - SVProgressHUD
+  - UMengAnalytics
   - WebViewJavascriptBridge
 
 SPEC CHECKSUMS:
@@ -30,6 +32,7 @@ SPEC CHECKSUMS:
   Reachability: 31e4272bd8378e094beaf6609dc182c85c4e6574
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  UMengAnalytics: 4bf831415146b9c57cb10be65fbd43462ef8cf65
   WebViewJavascriptBridge: a4d502315f1b8d9a51cd6a9174147ed567ec3bc5
 
 COCOAPODS: 0.39.0

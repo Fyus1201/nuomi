@@ -18,12 +18,15 @@
 #import "FYDataModel.h"
 #import "FYData.h"
 #import "iflyMSC/iflyMSC.h"
+#import "MobClick.h"
 
 #import "FYSaoViewController.h"
 #import "FYSearchViewController.h"
 #import "FYDengluViewController.h"
 
-@interface AppDelegate ()
+#import <AudioToolbox/AudioToolbox.h>
+
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @property (nonatomic) NSURLSession *session;
 
@@ -45,7 +48,7 @@
     //ViewController *one = [[ViewController alloc] init];
     //UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:one];//创建只包含itemsViewController的UINavigationController对象
     //navController.navigationBar.barTintColor = [UIColor colorWithRed:0.52 green:0.8 blue:0.93 alpha:0.9];
-
+    
     [self initifly];
     [self init3DTouchActionShow:YES];
     
@@ -53,6 +56,8 @@
     [self.window makeKeyAndVisible];
     
     [self initAdvView];
+    //友盟统计
+    [MobClick startWithAppkey:@"571a0a8de0f55a471a001314" reportPolicy:BATCH   channelId:@"GitHub"];
     
     return YES;
 }
@@ -303,6 +308,7 @@
 -(void)initTabbarItem
 {
     self.rootTabbarCtr  = [[UITabBarController alloc] init];
+    self.rootTabbarCtr.delegate = self;
     
     FYHomeViewController *home0 = [[FYHomeViewController alloc]init];
     [self controller:home0 title:@"首页" image:@"icon_tab_shouye_normal" selectedimage:@"icon_tab_shouye_highlight"];
@@ -332,6 +338,28 @@
     TS.tabBarItem.selectedImage = [[UIImage imageNamed:selectedimage]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:TS];
     [self.rootTabbarCtr addChildViewController:nav];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    //long index = tabBarController.selectedIndex;
+    /*
+    switch (index)
+    {
+        case 0:
+            NSLog(@"af");
+            break;
+        case 1:
+            NSLog(@"af");
+            break;
+        case 2:
+            NSLog(@"af");
+            break;
+        default:
+            break;
+    }*/
+    AudioServicesPlaySystemSound(1306);//系统声音 1000~2000
+    
 }
 
 @end
