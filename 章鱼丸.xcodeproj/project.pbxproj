@@ -436,6 +436,10 @@
 		5F43FA061CB008620007BD53 /* FYXingViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F43F9F71CB008620007BD53 /* FYXingViewCell.m */; };
 		5F43FA071CB008620007BD53 /* FYXingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F43F9F81CB008620007BD53 /* FYXingViewCell.xib */; };
 		5F6DC7161CB93C12005C2734 /* FYtopbannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F6DC7151CB93C12005C2734 /* FYtopbannerViewCell.m */; };
+		5F72B9191CC64C420037634D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F72B9181CC64C420037634D /* NotificationCenter.framework */; };
+		5F72B91D1CC64C420037634D /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F72B91C1CC64C420037634D /* TodayViewController.m */; };
+		5F72B9201CC64C420037634D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F72B91E1CC64C420037634D /* MainInterface.storyboard */; };
+		5F72B9241CC64C420037634D /* 章鱼团.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5F72B9171CC64C420037634D /* 章鱼团.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5F7E5AE41C9D90E40059947B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E5ADE1C9D900C0059947B /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5F7E5AE51C9D90F80059947B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E5AE01C9D90250059947B /* SystemConfiguration.framework */; };
 		5F7E5AE61C9D91050059947B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7E5AE21C9D90360059947B /* Foundation.framework */; };
@@ -460,6 +464,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F72B9221CC64C420037634D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F918C8A1C8968FB002D73FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F72B9161CC64C420037634D;
+			remoteInfo = "章鱼团";
+		};
 		5F918CAF1C8968FB002D73FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5F918C8A1C8968FB002D73FC /* Project object */;
@@ -483,6 +494,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				5F72B9241CC64C420037634D /* 章鱼团.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -966,10 +978,14 @@
 		5F43F9F61CB008620007BD53 /* FYXingViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYXingViewCell.h; path = "首页/View/Cell/FYXingViewCell.h"; sourceTree = "<group>"; };
 		5F43F9F71CB008620007BD53 /* FYXingViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYXingViewCell.m; path = "首页/View/Cell/FYXingViewCell.m"; sourceTree = "<group>"; };
 		5F43F9F81CB008620007BD53 /* FYXingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FYXingViewCell.xib; path = "首页/View/Cell/FYXingViewCell.xib"; sourceTree = "<group>"; };
-		5F47C0891CC72A8E003F0E19 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		5F47C0991CC72AE7003F0E19 /* 章鱼丸.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "章鱼丸.entitlements"; sourceTree = "<group>"; };
 		5F6DC7141CB93C12005C2734 /* FYtopbannerViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYtopbannerViewCell.h; path = "首页/View/Cell/FYtopbannerViewCell.h"; sourceTree = "<group>"; };
 		5F6DC7151CB93C12005C2734 /* FYtopbannerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYtopbannerViewCell.m; path = "首页/View/Cell/FYtopbannerViewCell.m"; sourceTree = "<group>"; };
+		5F72B9171CC64C420037634D /* 章鱼团.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "章鱼团.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F72B9181CC64C420037634D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5F72B91B1CC64C420037634D /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		5F72B91C1CC64C420037634D /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		5F72B91F1CC64C420037634D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5F72B9211CC64C420037634D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7E5ADE1C9D900C0059947B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5F7E5AE01C9D90250059947B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5F7E5AE21C9D90360059947B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1000,10 +1016,20 @@
 		5F96AF4E1CC11DE7002E2498 /* FYWebObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYWebObject.m; sourceTree = "<group>"; };
 		5FA0B2D01CBE676700F22DBD /* UINavigationBar+Awesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Awesome.h"; path = "首页/Other/UINavigationBar+Awesome.h"; sourceTree = "<group>"; };
 		5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Awesome.m"; path = "首页/Other/UINavigationBar+Awesome.m"; sourceTree = "<group>"; };
+		5FF4BA021CC734450048FCC4 /* 章鱼丸.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "章鱼丸.entitlements"; sourceTree = "<group>"; };
+		5FF4BA031CC7344B0048FCC4 /* 章鱼团.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "章鱼团.entitlements"; path = "章鱼团/章鱼团.entitlements"; sourceTree = "<group>"; };
 		819B8D4CD0AA118B7E7C1E21 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5F72B9141CC64C420037634D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F72B9191CC64C420037634D /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F918C8F1C8968FB002D73FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1059,7 +1085,7 @@
 				5F7E5AE21C9D90360059947B /* Foundation.framework */,
 				5F7E5AE01C9D90250059947B /* SystemConfiguration.framework */,
 				5F7E5ADE1C9D900C0059947B /* AVFoundation.framework */,
-				5F47C0891CC72A8E003F0E19 /* NotificationCenter.framework */,
+				5F72B9181CC64C420037634D /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1676,9 +1702,22 @@
 			path = "我的/Model";
 			sourceTree = "<group>";
 		};
+		5F72B91A1CC64C420037634D /* 章鱼团 */ = {
+			isa = PBXGroup;
+			children = (
+				5F72B91B1CC64C420037634D /* TodayViewController.h */,
+				5F72B91C1CC64C420037634D /* TodayViewController.m */,
+				5F72B91E1CC64C420037634D /* MainInterface.storyboard */,
+				5F72B9211CC64C420037634D /* Info.plist */,
+			);
+			name = "章鱼团";
+			path = "../章鱼团";
+			sourceTree = "<group>";
+		};
 		5F918C891C8968FB002D73FC = {
 			isa = PBXGroup;
 			children = (
+				5FF4BA031CC7344B0048FCC4 /* 章鱼团.entitlements */,
 				5F918C941C8968FB002D73FC /* 章鱼丸 */,
 				5F918CB11C8968FB002D73FC /* 章鱼丸Tests */,
 				5F918CBC1C8968FB002D73FC /* 章鱼丸UITests */,
@@ -1694,6 +1733,7 @@
 				5F918C921C8968FB002D73FC /* 章鱼丸.app */,
 				5F918CAE1C8968FB002D73FC /* 章鱼丸Tests.xctest */,
 				5F918CB91C8968FB002D73FC /* 章鱼丸UITests.xctest */,
+				5F72B9171CC64C420037634D /* 章鱼团.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1701,7 +1741,8 @@
 		5F918C941C8968FB002D73FC /* 章鱼丸 */ = {
 			isa = PBXGroup;
 			children = (
-				5F47C0991CC72AE7003F0E19 /* 章鱼丸.entitlements */,
+				5FF4BA021CC734450048FCC4 /* 章鱼丸.entitlements */,
+				5F72B91A1CC64C420037634D /* 章鱼团 */,
 				5F43F94B1CB002A50007BD53 /* 章鱼丸 */,
 				5FF16FE41C8D34720006C375 /* 首页 */,
 				5FF16FE61C8D34880006C375 /* 附近 */,
@@ -2013,6 +2054,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5F72B9161CC64C420037634D /* 章鱼团 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F72B9271CC64C420037634D /* Build configuration list for PBXNativeTarget "章鱼团" */;
+			buildPhases = (
+				5F72B9131CC64C420037634D /* Sources */,
+				5F72B9141CC64C420037634D /* Frameworks */,
+				5F72B9151CC64C420037634D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "章鱼团";
+			productName = "章鱼团";
+			productReference = 5F72B9171CC64C420037634D /* 章鱼团.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5F918C911C8968FB002D73FC /* 章鱼丸 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F918CC21C8968FB002D73FC /* Build configuration list for PBXNativeTarget "章鱼丸" */;
@@ -2028,6 +2086,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5F72B9231CC64C420037634D /* PBXTargetDependency */,
 			);
 			name = "章鱼丸";
 			productName = "章鱼丸";
@@ -2079,6 +2138,15 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Fyus;
 				TargetAttributes = {
+					5F72B9161CC64C420037634D = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 93945FX9PG;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					5F918C911C8968FB002D73FC = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 93945FX9PG;
@@ -2116,11 +2184,20 @@
 				5F918C911C8968FB002D73FC /* 章鱼丸 */,
 				5F918CAD1C8968FB002D73FC /* 章鱼丸Tests */,
 				5F918CB81C8968FB002D73FC /* 章鱼丸UITests */,
+				5F72B9161CC64C420037634D /* 章鱼团 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5F72B9151CC64C420037634D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F72B9201CC64C420037634D /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F918C901C8968FB002D73FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2573,6 +2650,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5F72B9131CC64C420037634D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F72B91D1CC64C420037634D /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F918C8E1C8968FB002D73FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2653,6 +2738,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F72B9231CC64C420037634D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5F72B9161CC64C420037634D /* 章鱼团 */;
+			targetProxy = 5F72B9221CC64C420037634D /* PBXContainerItemProxy */;
+		};
 		5F918CB01C8968FB002D73FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5F918C911C8968FB002D73FC /* 章鱼丸 */;
@@ -2666,6 +2756,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5F72B91E1CC64C420037634D /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F72B91F1CC64C420037634D /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		5F918C9E1C8968FB002D73FC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2685,6 +2783,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5F72B9251CC64C420037634D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_ENTITLEMENTS = "章鱼团/章鱼团.entitlements";
+				INFOPLIST_FILE = "章鱼团/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangyus.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5F72B9261CC64C420037634D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_ENTITLEMENTS = "章鱼团/章鱼团.entitlements";
+				INFOPLIST_FILE = "章鱼团/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangyus.extension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		5F918CC01C8968FB002D73FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2787,7 +2913,7 @@
 					"$(PROJECT_DIR)/章鱼丸",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fyus.BaiDuZhangYuDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangyus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2814,7 +2940,7 @@
 					"$(PROJECT_DIR)/章鱼丸",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Fyus.BaiDuZhangYuDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhangyus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -2870,6 +2996,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5F72B9271CC64C420037634D /* Build configuration list for PBXNativeTarget "章鱼团" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F72B9251CC64C420037634D /* Debug */,
+				5F72B9261CC64C420037634D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5F918C8D1C8968FB002D73FC /* Build configuration list for PBXProject "章鱼丸" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

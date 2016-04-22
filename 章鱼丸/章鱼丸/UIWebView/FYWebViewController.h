@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <webkit/webkit.h>
 
 @interface FYWebViewController : UIViewController
 
 @property (nonatomic) NSURL *URL;
+@property (strong, nonatomic) UIWebView *webView;
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) BOOL LED;
