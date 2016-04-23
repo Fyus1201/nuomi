@@ -1710,14 +1710,14 @@
 				5F72B91E1CC64C420037634D /* MainInterface.storyboard */,
 				5F72B9211CC64C420037634D /* Info.plist */,
 			);
-			name = "章鱼团";
-			path = "../章鱼团";
+			path = "章鱼团";
 			sourceTree = "<group>";
 		};
 		5F918C891C8968FB002D73FC = {
 			isa = PBXGroup;
 			children = (
 				5FF4BA031CC7344B0048FCC4 /* 章鱼团.entitlements */,
+				5F72B91A1CC64C420037634D /* 章鱼团 */,
 				5F918C941C8968FB002D73FC /* 章鱼丸 */,
 				5F918CB11C8968FB002D73FC /* 章鱼丸Tests */,
 				5F918CBC1C8968FB002D73FC /* 章鱼丸UITests */,
@@ -1742,7 +1742,6 @@
 			isa = PBXGroup;
 			children = (
 				5FF4BA021CC734450048FCC4 /* 章鱼丸.entitlements */,
-				5F72B91A1CC64C420037634D /* 章鱼团 */,
 				5F43F94B1CB002A50007BD53 /* 章鱼丸 */,
 				5FF16FE41C8D34720006C375 /* 首页 */,
 				5FF16FE61C8D34880006C375 /* 附近 */,

@@ -8,7 +8,6 @@
 
 #import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
-//#import "UIImageView+WebCache.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 {
@@ -57,7 +56,7 @@
 {
     [self.extensionContext openURL:[NSURL URLWithString:@"zhangyu://tuan"]
                  completionHandler:^(BOOL success) {
-                     NSLog(@"open url result:%d",success);
+                     //NSLog(@"open url result:%d",success);
                  }];
 }
 

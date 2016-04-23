@@ -56,8 +56,6 @@
     [self.window makeKeyAndVisible];
     
     [self initAdvView];
-    //友盟统计
-    [MobClick startWithAppkey:@"571a0a8de0f55a471a001314" reportPolicy:BATCH   channelId:@"GitHub"];
     
     return YES;
 }
@@ -65,7 +63,7 @@
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
-    NSLog(@"%@", [url absoluteString]);
+    //NSLog(@"%@", [url absoluteString]);
     
     // 在 host 等于 tuan 时，说明一个宝贝详情的 url，
     // 那么就使用本地的 ViewController 来显示
@@ -151,10 +149,11 @@
 - (void) initifly
 {
     dispatch_async(dispatch_get_global_queue(0, 0)/*全局0,0*/, ^{
-        //创建语音配置,appid必须要传入，仅执行一次则可
-        NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",@"56ed4d02"];
-        //所有服务启动前，需要确保执行createUtility
-        [IFlySpeechUtility createUtility:initString];
+    //创建语音配置,appid必须要传入，仅执行一次则可
+    NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@",@"56ed4d02"];
+    [MobClick startWithAppkey:@"571a0a8de0f55a471a001314" reportPolicy:BATCH   channelId:@"GitHub"];
+    //所有服务启动前，需要确保执行createUtility
+    [IFlySpeechUtility createUtility:initString];
     });
 }
 

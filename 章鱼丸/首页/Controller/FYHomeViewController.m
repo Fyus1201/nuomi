@@ -121,7 +121,13 @@
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
     
     FYData *item = [[FYDataModel sharedStore] allItems][0];
-    [_leftbtn setTitle:item.city forState:UIControlStateNormal];
+    if (item.city == nil)
+    {
+        [_leftbtn setTitle:@"绍兴" forState:UIControlStateNormal];
+    }else
+    {
+        [_leftbtn setTitle:item.city forState:UIControlStateNormal];
+    }
     
     if ([item.searchTerm length] > 0)
     {
@@ -398,7 +404,13 @@
     leftbtn.imageEdgeInsets = UIEdgeInsetsMake(0, 28, 0, 0);
     
     FYData *item = [[FYDataModel sharedStore] allItems][0];
-    [leftbtn setTitle:item.city forState:UIControlStateNormal];
+    if (item.city == nil)
+    {
+        [leftbtn setTitle:@"绍兴" forState:UIControlStateNormal];
+    }else
+    {
+        [leftbtn setTitle:item.city forState:UIControlStateNormal];
+    }
     //leftbtn.contentHorizontalAlignment =UIControlContentHorizontalAlignmentCenter;
     
     leftbtn.titleLabel.font = [UIFont systemFontOfSize:13];
