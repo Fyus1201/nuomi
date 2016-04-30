@@ -97,7 +97,11 @@
 -(void)OnZhuceBtn:(UIButton *)sender
 {
     NSLog(@"注册");
-
+}
+- (IBAction)denglu:(id)sender
+{
+    //abort();//退出//在plist添加屬性Application does not run in background = YES
+    //exit(0);
     
 }
 

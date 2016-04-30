@@ -35,6 +35,14 @@
 @implementation AppDelegate
 
 
+- (void)applicationDidFinishLaunching:(UIApplication *)app
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"启动时间 是 %f sec", CFAbsoluteTimeGetCurrent());//启动时间
+    });
+    // ...
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
@@ -56,7 +64,7 @@
     [self.window makeKeyAndVisible];
     
     [self initAdvView];
-    
+    [[UIApplication sharedApplication].delegate applicationDidFinishLaunching:application] ;
     return YES;
 }
 

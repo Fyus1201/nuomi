@@ -105,6 +105,9 @@
                     <state key="normal" title="登陆">
                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="denglu:" destination="-1" eventType="touchUpInside" id="AEU-cG-yZx"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRt-Oi-hjD">
                     <rect key="frame" x="289" y="310" width="78" height="28"/>

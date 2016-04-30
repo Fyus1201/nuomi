@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-
+CFAbsoluteTime StartTime;
 int main(int argc, char * argv[]) {
+    StartTime = CFAbsoluteTimeGetCurrent();
+    NSLog(@"启动时间 是 %f sec", StartTime);//启动时间
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
     
 }
+
