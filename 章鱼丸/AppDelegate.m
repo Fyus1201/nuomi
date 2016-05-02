@@ -205,6 +205,7 @@
 #pragma mark - 加载图片广告
 -(void)initAdvView
 {
+    //这个逻辑处理，会导致，开启时间过长，最好改成开启后读取缓存的广告
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:[NSString stringWithFormat:@"loading.png"]];
     //NSLog(@"filePath:  %@",filePath);
