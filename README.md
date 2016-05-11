@@ -1,7 +1,6 @@
 # 百度章鱼
 
-    高仿的百度糯米，OC编写，采用纯代码＋xib开发，转载请注明出处，请不要用于其他商业用途。 ≖‿≖✧
-    采用cocoapods管理第三方库，双击nuomi.xcworkspace启动工程，若双击nuomi.xcodeproj启动则无法正常工作。
+    高仿的百度糯米，OC编写，采用纯代码＋xib开发，转载请注明出处，仅供大家学习参考。 ≖‿≖✧
 
 (｡･ω･)ﾉﾞ主要功能： 
     1. 首页最新活动，附近，精品展示
@@ -23,5 +22,7 @@
 ![image](https://github.com/Fyus1201/nuomi/blob/master/image/mov3.gif) 
 
 ![image](https://github.com/Fyus1201/nuomi/blob/master/image/mov4.gif) 
+
+	因为采用cocoapods管理第三方库，请双击nuomi.xcworkspace启动工程，若双击nuomi.xcodeproj启动则无法正常工作。
 
 
