@@ -11,6 +11,8 @@
     6. 搜索记录，所在地储存（数据持久化）
     7. 通知栏展示
 
+特别注意，因为采用cocoapods管理第三方库，启动工程是双击nuomi.xcworkspace，若双击nuomi.xcodeproj启动则无法正常工作。
+
 # 效果图
 
 ![image](https://github.com/Fyus1201/nuomi/blob/master/image/mov0.gif) 
@@ -23,6 +25,6 @@
 
 ![image](https://github.com/Fyus1201/nuomi/blob/master/image/mov4.gif) 
 
-	因为采用cocoapods管理第三方库，请双击nuomi.xcworkspace启动工程，若双击nuomi.xcodeproj启动则无法正常工作。
+	
 
 
