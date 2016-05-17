@@ -151,9 +151,6 @@
     {
         [self.cell7 addTimer];
     }
-    
-
-    [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

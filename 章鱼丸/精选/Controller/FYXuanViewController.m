@@ -170,7 +170,7 @@
     
     //[self setupnav];//初始化头部
     [self.cell2 addTimer];
-    [self.tableView.mj_header beginRefreshing];
+
 }
 
 -(void)viewWillDisappear:(BOOL)animated
