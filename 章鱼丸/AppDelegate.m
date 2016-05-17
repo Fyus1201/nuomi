@@ -350,12 +350,13 @@
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
-    //long index = tabBarController.selectedIndex;
     /*
+    long index = tabBarController.selectedIndex;
+    
     switch (index)
     {
         case 0:
-            NSLog(@"af");
+        
             break;
         case 1:
             NSLog(@"af");
@@ -368,6 +369,14 @@
     }*/
     AudioServicesPlaySystemSound(1306);//系统声音 1000~2000
     
+}
+//禁止多次点击
+-(BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    UIViewController *tbselect=tabBarController.selectedViewController;
+    if([tbselect isEqual:viewController]){
+        return NO;
+    }
+    return YES;
 }
 
 @end

@@ -39,7 +39,21 @@
     
     [self setNav];
     
+}
+
+#pragma mark - 入出 设置
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     
 }
 
@@ -135,6 +149,7 @@
                 self.lab.text = @"";
                 UIImage *home1008 = [UIImage imageNamed:@"home-10-07"];
                 [self.fenxiang setBackgroundImage:home1008 forState:UIControlStateNormal];
+                [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
             }
         }
         else if (offsetY < -100)
@@ -151,6 +166,7 @@
                 self.lab.text = @"我的";
                 UIImage *home1008 = [UIImage imageNamed:@"home-10-04"];
                 [self.fenxiang setBackgroundImage:home1008 forState:UIControlStateNormal];
+                [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
             }
             
         }
