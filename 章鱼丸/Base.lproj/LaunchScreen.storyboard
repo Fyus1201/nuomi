@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,37 +15,56 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="百度章鱼" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2uu-zX-n2d">
-                                <rect key="frame" x="16" y="162" width="343" height="203"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
-                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhangyu.png" translatesAutoresizingMaskIntoConstraints="NO" id="JfO-T5-5bJ">
+                                <rect key="frame" x="29" y="98" width="263" height="284"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="284" id="djU-Wl-Vfj"/>
+                                    <constraint firstAttribute="width" constant="263" id="fbw-WL-P4n"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2016年 Fyus1201. All rights reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVW-fc-pO6">
-                                <rect key="frame" x="-4" y="629" width="383" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="-4" y="442" width="328" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="HuT-Bc-Nff"/>
+                                    <constraint firstAttribute="width" constant="328" id="h7G-U7-TXB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="h7G-U7-TXB"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="yVW-fc-pO6" secondAttribute="trailing" constant="-20" id="7Ta-TK-mtw"/>
-                            <constraint firstItem="yVW-fc-pO6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="ETP-Cw-qkY"/>
-                            <constraint firstItem="2uu-zX-n2d" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="142" id="NXo-uP-l5q"/>
-                            <constraint firstItem="yVW-fc-pO6" firstAttribute="top" secondItem="2uu-zX-n2d" secondAttribute="bottom" constant="264" id="PbH-wW-UGg"/>
-                            <constraint firstItem="2uu-zX-n2d" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="cot-ZP-dhE"/>
-                            <constraint firstItem="2uu-zX-n2d" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="mVw-RJ-jFo"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="yVW-fc-pO6" secondAttribute="bottom" constant="20" id="uS9-Sa-0AU"/>
+                            <constraint firstItem="JfO-T5-5bJ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6qM-tM-cQs"/>
+                            <constraint firstItem="yVW-fc-pO6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7IG-Dg-3fE"/>
+                            <constraint firstItem="yVW-fc-pO6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="Ka1-hB-SLw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yVW-fc-pO6" secondAttribute="trailing" constant="-24" id="Kh8-DP-fi6"/>
+                            <constraint firstItem="yVW-fc-pO6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-24" id="YCG-4S-aty"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="yVW-fc-pO6" secondAttribute="bottom" constant="20" id="be8-bg-nIG"/>
+                            <constraint firstItem="yVW-fc-pO6" firstAttribute="centerX" secondItem="JfO-T5-5bJ" secondAttribute="centerX" id="d6J-FB-fwc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Kh8-DP-fi6"/>
+                                <exclude reference="YCG-4S-aty"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="52.5" y="374.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="zhangyu.png" width="215" height="275"/>
+    </resources>
 </document>

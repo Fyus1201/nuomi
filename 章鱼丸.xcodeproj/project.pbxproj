@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F23261C1CF8372300B5CB44 /* zhangyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F23261B1CF8372300B5CB44 /* zhangyu.png */; };
 		5F42B12D1CB352A700FAC739 /* FYTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42B12C1CB352A700FAC739 /* FYTopView.m */; };
 		5F42B1391CB3BB1600FAC739 /* topData0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F42B1351CB3BB1600FAC739 /* topData0.plist */; };
 		5F42B13A1CB3BB1600FAC739 /* topData1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F42B1361CB3BB1600FAC739 /* topData1.plist */; };
@@ -503,6 +504,7 @@
 
 /* Begin PBXFileReference section */
 		0285432EFEB1B10885A0F2D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5F23261B1CF8372300B5CB44 /* zhangyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangyu.png; sourceTree = "<group>"; };
 		5F42B12B1CB352A700FAC739 /* FYTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYTopView.h; path = "精选/View/FYTopView.h"; sourceTree = "<group>"; };
 		5F42B12C1CB352A700FAC739 /* FYTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYTopView.m; path = "精选/View/FYTopView.m"; sourceTree = "<group>"; };
 		5F42B1351CB3BB1600FAC739 /* topData0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = topData0.plist; sourceTree = "<group>"; };
@@ -1105,6 +1107,7 @@
 		5F43F6651CB000270007BD53 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				5F23261B1CF8372300B5CB44 /* zhangyu.png */,
 				5F43F6661CB000270007BD53 /* Home */,
 				5F43F6851CB000270007BD53 /* Resource */,
 				5F43F7781CB000270007BD53 /* Tabbar */,
@@ -2581,6 +2584,7 @@
 				5F43F8FA1CB000280007BD53 /* icon_tab_shouye_highlight@2x.png in Resources */,
 				5F43F9371CB000280007BD53 /* jiudian.png in Resources */,
 				5F43F8B81CB000280007BD53 /* icon_web_goforward_dis@2x.png in Resources */,
+				5F23261C1CF8372300B5CB44 /* zhangyu.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
