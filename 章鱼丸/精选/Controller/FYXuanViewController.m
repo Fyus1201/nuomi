@@ -490,7 +490,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%ld,%ld", indexPath.section,indexPath.row);//row 行 section 段
+    NSLog(@"%ld,%ld", (long)indexPath.section,(long)indexPath.row);//row 行 section 段
     if (indexPath.section == 0)
     {
         
@@ -607,28 +607,28 @@
         if (sender.tag-200 == 0)
         {
             NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"topData0" ofType:@"plist"];
-            NSArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
+            NSMutableArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
             
             [_topView setTopArray:_topArray];
             [_topView setBigGroupArray:big];
         }else if (sender.tag-200 == 1)
         {
             NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"topData1" ofType:@"plist"];
-            NSArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
+            NSMutableArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
             
             [_topView setTopArray:_topArray];
             [_topView setBigGroupArray:big];
         }else if (sender.tag-200 == 2)
         {
             NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"topData2" ofType:@"plist"];
-            NSArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
+            NSMutableArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
             
             [_topView setTopArray:_topArray];
             [_topView setBigGroupArray:big];
         }else
         {
             NSString *plistPath = [[NSBundle mainBundle]pathForResource:@"topData3" ofType:@"plist"];
-            NSArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
+            NSMutableArray *big = [[NSMutableArray alloc]initWithContentsOfFile:plistPath];
             
             [_topView setTopArray:_topArray];
             [_topView setBigGroupArray:big];
@@ -788,7 +788,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败1 ");
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
@@ -830,7 +830,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败2 ");
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];

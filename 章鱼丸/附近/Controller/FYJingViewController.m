@@ -428,7 +428,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%ld,%ld", indexPath.section,indexPath.row);//row 行 section 段
+    NSLog(@"%ld,%ld", (long)indexPath.section,(long)indexPath.row);//row 行 section 段
     if (indexPath.section == 0)
     {
         
@@ -543,7 +543,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败1 ");
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];
@@ -586,7 +586,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败2 ");
                                                   [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];
@@ -658,7 +658,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败2 ");
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];

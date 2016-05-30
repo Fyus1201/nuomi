@@ -325,7 +325,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%ld,%ld", indexPath.section,indexPath.row);//row 行 section 段
+    NSLog(@"%ld,%ld", (long)indexPath.section,(long)indexPath.row);//row 行 section 段
     
     if (indexPath.row == [self.history count]+1)
     {

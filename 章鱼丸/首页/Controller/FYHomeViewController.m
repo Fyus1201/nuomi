@@ -115,7 +115,7 @@
     }
     else
     {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     }
     
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];//背景颜色
@@ -502,20 +502,6 @@
     return image;
 }
 
-#pragma mark - 图片大小处理 PS:会失真
--(UIImage*) OriginImage:(UIImage *)image scaleToSize:(CGSize)size
-{
-    UIGraphicsBeginImageContext(size);  //size 为CGSize类型，即你所需要的图片尺寸
-    
-    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
-    
-    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
-    
-    return scaledImage;   //返回的就是已经改变的图片
-}
-
 #pragma mark - ScrollView 使用头文件刷新 中的距离
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -570,7 +556,7 @@
                 self.NavView.layer.borderWidth = 0.0;//边框线
                 self.NavView.layer.borderColor = [UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:0.9].CGColor;
                 
-                [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
+                [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
             }
         }else
         {
@@ -1229,7 +1215,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
  
-    NSLog(@"%ld,%ld", indexPath.section,indexPath.row);//row 行 section 段
+    NSLog(@"%ld,%ld", (long)indexPath.section,(long)indexPath.row);//row 行 section 段
 
         if (indexPath.section == 3)
         {
@@ -1692,7 +1678,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"错误: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"错误: %@%ld", error.localizedDescription, (long)error.code);
                                               
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败2 ");
@@ -1738,7 +1724,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败3 ");
                                                   [SVProgressHUD showErrorWithStatus:@"网络连接失败"];

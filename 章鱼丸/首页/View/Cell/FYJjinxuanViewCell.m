@@ -119,9 +119,9 @@
     NSInteger hour = subTime/3600;
     NSInteger min = (subTime%3600)/60;
     NSInteger sec = (subTime%3600)%60;
-    self.hourLabel.text = [NSString stringWithFormat:@"%02ld",hour];
-    self.minLabel.text = [NSString stringWithFormat:@"%02ld",min];
-    self.secLabel.text = [NSString stringWithFormat:@"%02ld",sec];
+    self.hourLabel.text = [NSString stringWithFormat:@"%02ld",(long)hour];
+    self.minLabel.text = [NSString stringWithFormat:@"%02ld",(long)min];
+    self.secLabel.text = [NSString stringWithFormat:@"%02ld",(long)sec];
     
 }
 

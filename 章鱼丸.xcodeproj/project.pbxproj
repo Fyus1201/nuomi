@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5F23261C1CF8372300B5CB44 /* zhangyu.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F23261B1CF8372300B5CB44 /* zhangyu.png */; };
+		5F23262F1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F23262E1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.m */; };
 		5F42B12D1CB352A700FAC739 /* FYTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F42B12C1CB352A700FAC739 /* FYTopView.m */; };
 		5F42B1391CB3BB1600FAC739 /* topData0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F42B1351CB3BB1600FAC739 /* topData0.plist */; };
 		5F42B13A1CB3BB1600FAC739 /* topData1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5F42B1361CB3BB1600FAC739 /* topData1.plist */; };
@@ -505,6 +506,8 @@
 /* Begin PBXFileReference section */
 		0285432EFEB1B10885A0F2D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5F23261B1CF8372300B5CB44 /* zhangyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhangyu.png; sourceTree = "<group>"; };
+		5F23262D1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+FYImageCategory_h.h"; path = "首页/Other/UIImage+FYImageCategory_h.h"; sourceTree = "<group>"; };
+		5F23262E1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+FYImageCategory_h.m"; path = "首页/Other/UIImage+FYImageCategory_h.m"; sourceTree = "<group>"; };
 		5F42B12B1CB352A700FAC739 /* FYTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FYTopView.h; path = "精选/View/FYTopView.h"; sourceTree = "<group>"; };
 		5F42B12C1CB352A700FAC739 /* FYTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FYTopView.m; path = "精选/View/FYTopView.m"; sourceTree = "<group>"; };
 		5F42B1351CB3BB1600FAC739 /* topData0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = topData0.plist; sourceTree = "<group>"; };
@@ -1905,6 +1908,8 @@
 				5F43F9601CB0039F0007BD53 /* ISRDataHelper.m */,
 				5FA0B2D01CBE676700F22DBD /* UINavigationBar+Awesome.h */,
 				5FA0B2D11CBE676700F22DBD /* UINavigationBar+Awesome.m */,
+				5F23262D1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.h */,
+				5F23262E1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.m */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -2666,6 +2671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F43F9FE1CB008620007BD53 /* FYHomeTwoCell.m in Sources */,
+				5F23262F1CFC35CE00B5CB44 /* UIImage+FYImageCategory_h.m in Sources */,
 				5F43F98A1CB0041D0007BD53 /* FYDataModel.m in Sources */,
 				5F43F9721CB003E20007BD53 /* FYCityViewController.m in Sources */,
 				5F43F9FB1CB008620007BD53 /* FYEbannerViewCell.m in Sources */,

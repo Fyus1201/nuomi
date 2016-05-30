@@ -266,7 +266,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@"加载 启动页广告 失败");
                                                   

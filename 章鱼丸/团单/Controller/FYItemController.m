@@ -20,6 +20,8 @@
 #import "UINavigationBar+Awesome.h"
 #import <SVProgressHUD.h>
 
+#import "UIImage+FYImageCategory_h.h"
+
 @interface FYItemController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,UIWebViewDelegate,FYItemTuanTableViewCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -122,7 +124,7 @@
     if (self.led == YES)
     {
         self.lab.text = @"";
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
+        [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
         
     }else
     {
@@ -275,7 +277,7 @@
 
 -(void)setFoot
 {
-    self.footView = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height-80, [UIScreen mainScreen].bounds.size.width, 80)];
+    self.footView = [[UIView alloc]initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height-70, [UIScreen mainScreen].bounds.size.width, 70)];
     self.footView.backgroundColor = [UIColor whiteColor];
     
     self.footView.layer.borderWidth = 0.5;//边框线
@@ -283,7 +285,7 @@
     [self.view addSubview:self.footView];
     
     self.mai = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.mai.frame = CGRectMake(20, 10, [UIScreen mainScreen].bounds.size.width-40, 60);
+    self.mai.frame = CGRectMake(15, 10, [UIScreen mainScreen].bounds.size.width-30, 50);
     /*设置按钮不是用这些。。。*/
     //self.mai.titleLabel.text = @"购买";
     //self.mai.titleLabel.backgroundColor = [UIColor redColor];
@@ -291,16 +293,22 @@
     [self.mai setTitle:@"购买" forState:UIControlStateNormal];
     //[self.mai setBackgroundColor:[UIColor redColor]];
     
-    //生成纯色图片
-    CGSize imageSize =CGSizeMake(50,50);
-    UIGraphicsBeginImageContextWithOptions(imageSize,0, [UIScreen mainScreen].scale);
-    [[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.9] set];
-    UIRectFill(CGRectMake(0,0, imageSize.width, imageSize.height));
-    UIImage *pressedColorImg =UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
+    CGSize imageSize =CGSizeMake([UIScreen mainScreen].bounds.size.width-30,50);
+    UIImage *pressedColorImg = [[UIImage alloc] setOriginColor:[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.9] scaleToSize:imageSize];
+    pressedColorImg = [UIImage createRoundedRectImage:pressedColorImg size:imageSize radius:5];
     
     [self.mai setBackgroundImage:pressedColorImg forState:UIControlStateNormal];//这样有点击效果
     
+    /*
+    //给按钮加一个白色的板框
+    self.mai.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.mai.layer.borderWidth = 1.0f;
+    
+    //给按钮设置弧度,这里将按钮变成了圆形
+    self.mai.layer.cornerRadius = 10.0f;
+    self.mai.backgroundColor = [UIColor redColor];
+    self.mai.layer.masksToBounds = YES;
+    */
     self.mai.contentHorizontalAlignment =UIControlContentHorizontalAlignmentCenter;
     
     [self.mai addTarget:self action:@selector(OnZhuceBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -560,7 +568,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%ld,%ld", indexPath.section,indexPath.row);//row 行 section 段
+    NSLog(@"%ld,%ld", (long)indexPath.section,(long)indexPath.row);//row 行 section 段
     
     if (indexPath.section == 1)
     {
@@ -661,7 +669,7 @@
                                                      completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
                                           if (error) {
-                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, error.code);
+                                              NSLog(@"Httperror: %@%ld", error.localizedDescription, (long)error.code);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新失败3 ");
                                                   [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];

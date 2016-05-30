@@ -371,7 +371,7 @@
             return cell;
         }else
         {
-            cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+            cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
             return cell;
         }
 
@@ -381,7 +381,7 @@
         return cell;
     }else
     {
-        cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
         return cell;
     }
     
@@ -390,7 +390,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSLog(@"%ld,%ld", indexPath.section,indexPath.row);//row 行 section 段
+    NSLog(@"%ld,%ld", (long)indexPath.section,(long)indexPath.row);//row 行 section 段
     
     FYDengluViewController *denglu = [[FYDengluViewController alloc]initWithNibName:@"FYDengluViewController" bundle:nil];
     

@@ -80,9 +80,9 @@
             
             
             shopNameLabel.text = [listArray[i] objectForKey:@"brand"];
-            newPriceLabel.text = [NSString stringWithFormat:@"￥%ld",[[listArray[i] objectForKey:@"current_price"] integerValue]/100];
+            newPriceLabel.text = [NSString stringWithFormat:@"￥%d",[[listArray[i] objectForKey:@"current_price"] integerValue]/100];
             
-            NSString *oldStr = [NSString stringWithFormat:@"%ld",[[listArray[i] objectForKey:@"market_price"] integerValue]/100];
+            NSString *oldStr = [NSString stringWithFormat:@"%d",[[listArray[i] objectForKey:@"market_price"] integerValue]/100];
             //中划线
             NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
             NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:oldStr attributes:attribtDic];
@@ -155,9 +155,9 @@
     NSInteger hour = subTime/3600;
     NSInteger min = (subTime%3600)/60;
     NSInteger sec = (subTime%3600)%60;
-    self.hourLabel.text = [NSString stringWithFormat:@"%02ld",hour];
-    self.minLabel.text = [NSString stringWithFormat:@"%02ld",min];
-    self.secLabel.text = [NSString stringWithFormat:@"%02ld",sec];
+    self.hourLabel.text = [NSString stringWithFormat:@"%02ld",(long)hour];
+    self.minLabel.text = [NSString stringWithFormat:@"%02ld",(long)min];
+    self.secLabel.text = [NSString stringWithFormat:@"%02ld",(long)sec];
     
 }
 
