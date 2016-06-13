@@ -80,9 +80,9 @@
             
             
             shopNameLabel.text = [listArray[i] objectForKey:@"brand"];
-            newPriceLabel.text = [NSString stringWithFormat:@"￥%d",[[listArray[i] objectForKey:@"current_price"] integerValue]/100];
+            newPriceLabel.text = [NSString stringWithFormat:@"￥%ld",[[listArray[i] objectForKey:@"current_price"] integerValue]/100];
             
-            NSString *oldStr = [NSString stringWithFormat:@"%d",[[listArray[i] objectForKey:@"market_price"] integerValue]/100];
+            NSString *oldStr = [NSString stringWithFormat:@"%ld",[[listArray[i] objectForKey:@"market_price"] integerValue]/100];
             //中划线
             NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
             NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:oldStr attributes:attribtDic];

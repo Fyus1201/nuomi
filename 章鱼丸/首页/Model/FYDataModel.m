@@ -51,7 +51,7 @@ NSString *itemArchivePath()//辅助函数c语言,返回保存地址
 -(instancetype)init
 {
     @throw [NSException exceptionWithName:@"Singleton"
-                                   reason:@"Use +[BNRItemStore sharedStore]"
+                                   reason:@"Use +[FYDataModel sharedStore]"
                                  userInfo:nil];
 }
 //真正的初始化方式

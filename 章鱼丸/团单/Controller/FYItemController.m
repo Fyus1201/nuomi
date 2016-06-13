@@ -258,9 +258,8 @@
 
     _imageView.image = [UIImage imageNamed:@"account_place_holder"];
     
-    
-    [self.scrollView addSubview:_imageView];
 
+    [self.scrollView addSubview:_imageView];
     [self.tableView addSubview:self.scrollView];
 
 }
@@ -268,11 +267,17 @@
 - (void)initTitle
 {
     //标题文字
-    _titleView = [[FYMenuBtnView alloc] initWithFrame9:CGRectMake(0,[UIScreen mainScreen].bounds.size.width*0.45-50, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width*0.2) subtitle:@"已售1531" title:_itemModel[@"title"] long_title:_itemModel[@"long_title"]];
+    _titleView = [[FYMenuBtnView alloc] initWithFrame9:CGRectMake(0,[UIScreen mainScreen].bounds.size.width*0.4, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width*0.2) subtitle:@"已售1531" title:_itemModel[@"title"] long_title:_itemModel[@"long_title"]];
     _titleView.backgroundColor = [UIColor blackColor];
     _titleView.backgroundColor = [_titleView.backgroundColor colorWithAlphaComponent:0];
+    
+    //下背景图片
+    UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(0,-29, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width*0.6)];
+    
+    imageView1.image = [UIImage imageNamed:@"album_album0"];
 
-    [self.tableView addSubview:_titleView];
+    [imageView1 addSubview:_titleView];
+    [self.tableView addSubview:imageView1];
 }
 
 -(void)setFoot
@@ -294,7 +299,7 @@
     //[self.mai setBackgroundColor:[UIColor redColor]];
     
     CGSize imageSize =CGSizeMake([UIScreen mainScreen].bounds.size.width-30,50);
-    UIImage *pressedColorImg = [[UIImage alloc] setOriginColor:[UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:0.9] scaleToSize:imageSize];
+    UIImage *pressedColorImg = [[UIImage alloc] setOriginColor:[UIColor colorWithRed:255/255.0 green:54/255.0 blue:102/255.0 alpha:1.0] scaleToSize:imageSize];
     pressedColorImg = [UIImage createRoundedRectImage:pressedColorImg size:imageSize radius:5];
     
     [self.mai setBackgroundImage:pressedColorImg forState:UIControlStateNormal];//这样有点击效果
@@ -356,7 +361,7 @@
                 
                 [self.closeBtn setImage:[UIImage imageNamed:@"brower_pre_0"] forState:UIControlStateNormal];
                 
-                [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];//白色
+                [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;//白色
             }
         }else
         {

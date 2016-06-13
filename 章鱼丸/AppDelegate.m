@@ -170,7 +170,7 @@
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [self.rootTabbarCtr setSelectedIndex:0];
     FYData *item = [[FYDataModel sharedStore] allItems][0];
-    item.searchTerm = @"";//本来是不应该放在这个单例里面，然而顺手放进去了,再弄个单例麻烦
+    item.searchTerm = @"";//本来是不应该放在这个单例里面
     
     BOOL success = [[FYDataModel sharedStore] saveChanges];
     if (success)
