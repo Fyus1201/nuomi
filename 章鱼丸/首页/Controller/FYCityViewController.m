@@ -25,6 +25,7 @@
     [self initNav];
     [self initData];
     [self initTableView];
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -25,6 +25,7 @@
     // Do any additional setup after loading the view.
     [self initNav];
     [self initData];
+    [self addPanRecognizer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,6 +55,12 @@
 - (void)viewDidDisappear:(BOOL)animated//考虑到滑动推出，另外加两个进行过度
 {
      [super viewDidDisappear:animated];
+}
+
+- (void)addPanRecognizer {
+    UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(OnCloseBtn:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
+    [self.view addGestureRecognizer:swipeRecognizer];
 }
 
 -(void)initNav
