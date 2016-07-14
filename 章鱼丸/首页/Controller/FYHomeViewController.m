@@ -661,10 +661,10 @@
     {
         if (_likeArray)
         {
-            return 10;
+            return 6;//API变动 -4
         }else
         {
-            return 9;
+            return 5;
         }
         
     }else
@@ -675,6 +675,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    /*
     if (section == 6)
     {
         if (_homeGroupM.meishiGroup.banner)
@@ -704,8 +705,8 @@
         {
             return 2;
         }
-    }else
-    if (section == 9)
+    }else*/
+    if (section == 5)
     {
         return _likeArray.count+2;
     }
@@ -730,7 +731,7 @@
     {
         return 80;
       
-    } else if(indexPath.section == 5)
+    } /*else if(indexPath.section == 5)
     {
         if ([_homeGroupM.activityGroup[@"listInfo"] count] == 5)
         {
@@ -739,7 +740,7 @@
         {
             return 160;
         }
-        else if ([_homeGroupM.activityGroup[@"listInfo"] count] == 7||[_homeGroupM.activityGroup[@"listInfo"] count] == 8)
+        else if ([_homeGroupM.activityGroup[@"listInfo"] count] == 7||[_homeGroupM.activityGroup[@"listInfo"] count] == 8||[_homeGroupM.activityGroup[@"listInfo"] count] == 9)
         {
             return 320;
         }
@@ -828,7 +829,7 @@
                 return 200;
             }
         }
-    }else if (indexPath.section == 9)
+    }*/else if (indexPath.section == 5)
     {
         if (indexPath.row == 0)
         {
@@ -966,7 +967,7 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setHomeNewDataDic:_homeGroupM.daoDianfu[0]];
         return cell;
-    }
+    }/*
     else  if (indexPath.section == 5)
     {
         if (_homeGroupM.activityGroup)
@@ -1014,6 +1015,7 @@
                  cell.imageView.frame = CGRectMake(-50, 0, 20, 50);
                  */
                 //离最左有一定距离，放弃，可以尝试 添加图片的方式
+    /*
                 cell.detailTextLabel.text = _homeGroupM.meishiGroup.descTitle;
                 cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
                 
@@ -1159,8 +1161,8 @@
         
         return cell0;
         
-    }
-    else if (indexPath.section == 9)
+    }*/
+    else if (indexPath.section == 5)
     {
         if (_likeArray)
         {
@@ -1697,7 +1699,7 @@
 
                                               //FYHomeActivityListInfoModel *activity = _homeGroupM.activityGroup[@"listInfo"][1];
                                               //NSArray *adf = _homeGroupM.daoDianfu;
-                                              //NSLog(@"%@",_homeGroupM);
+                                              NSLog(@"%@",_homeGroupM);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新成功2 ");
                                                 [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];

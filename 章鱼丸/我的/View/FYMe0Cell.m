@@ -53,10 +53,10 @@
 
 -(void)OnTapBackView:(UITapGestureRecognizer *)sender//点击触发 手势
 {
-    UIView *backView = (UIView *)sender.view;
-    int tag = (int)backView.tag-100;
-    [self.delegate didSelectedMe0AtIndex:tag];
-    NSLog(@"%d",tag);
+    //UIView *backView = (UIView *)sender.view;
+    //int tag = (int)backView.tag-100;
+    [self.delegate didSelectedMe0AtIndex:0];
+    //NSLog(@"%d",tag);
 }
 
 

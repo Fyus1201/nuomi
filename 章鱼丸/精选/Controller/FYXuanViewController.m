@@ -167,6 +167,7 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     
     //[self setupnav];//初始化头部
     [self.cell2 addTimer];

@@ -235,7 +235,7 @@
         _page=0;
         _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*_page, 0);
     }
-    NSLog(@"dfsd");
+    //NSLog(@"dfsd");
 }
 
 /**

@@ -21,9 +21,21 @@
     {
         for (int i = 0; i < array.count; i++)
         {
+            NSLog(@"%d",i);
             NSDictionary *act = array[i];
             FYMenuBtnView *backView;
             if (array.count == 6)
+            {
+                backView = [[FYMenuBtnView alloc] initWithFrame7:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width/2-1, 79)
+                                                            subtitle:act[@"subtitle"]
+                                                               title:act[@"title"]
+                                                             tuijian:act[@"tag"]
+                                                            imagestr:act[@"image"]];
+                    
+                    
+                
+            }
+            else if (array.count == 6)
             {
                 if (i < 2)
                 {
@@ -104,6 +116,34 @@
                 }else if (i <= 3)
                 {
                     backView = [[FYMenuBtnView alloc] initWithFrame7:CGRectMake([UIScreen mainScreen].bounds.size.width/2, 100*(i-2)+1, [UIScreen mainScreen].bounds.size.width/2-1, 99)
+                                                            subtitle:act[@"subtitle"]
+                                                               title:act[@"title"]
+                                                             tuijian:act[@"tag"]
+                                                            imagestr:act[@"image"]];
+                    
+                    
+                }
+                else{
+                    backView = [[FYMenuBtnView alloc] initWithFrame6:CGRectMake((i-4)*[UIScreen mainScreen].bounds.size.width/4, 201, [UIScreen mainScreen].bounds.size.width/4-1, 118)
+                                
+                                                            subtitle:act[@"subtitle"]
+                                                               title:act[@"title"]
+                                                            imagestr:act[@"image"]];
+                }
+            } else if(array.count == 9)
+            {NSLog(@"你好啊 啊啊啊啊啊");
+                if (i < 1)
+                {
+                    backView = [[FYMenuBtnView alloc] initWithFrame7:CGRectMake(0, 100*i, [UIScreen mainScreen].bounds.size.width/2-1, 99)
+                                                            subtitle:act[@"subtitle"]
+                                                               title:act[@"title"]
+                                                             tuijian:act[@"tag"]
+                                                            imagestr:act[@"image"]];
+                    
+                    
+                }else if (i <= 2)
+                {
+                    backView = [[FYMenuBtnView alloc] initWithFrame7:CGRectMake([UIScreen mainScreen].bounds.size.width/2, 100*(i-1), [UIScreen mainScreen].bounds.size.width/2-1, 99)
                                                             subtitle:act[@"subtitle"]
                                                                title:act[@"title"]
                                                              tuijian:act[@"tag"]

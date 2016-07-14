@@ -151,7 +151,6 @@
             }
             
             backView.tag = 100+i;
-            
             backView.userInteractionEnabled = YES;
             
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(OnTapBackView:)];
