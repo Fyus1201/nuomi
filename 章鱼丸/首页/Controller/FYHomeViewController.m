@@ -1267,7 +1267,7 @@
             [self.navigationController pushViewController:web0 animated:YES];//1.点击，相应跳转
         }
     
-    if (indexPath.section == 9)
+    if (indexPath.section == 5)//9
     {
         if (indexPath.row > 0 && indexPath.row <= _likeArray.count)
         {
