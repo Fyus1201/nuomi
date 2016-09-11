@@ -963,7 +963,7 @@
     else if (indexPath.section == 4)
     {
         FYXingViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell3" forIndexPath:indexPath];
-        cell.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:0.9];
+//        cell.backgroundColor = [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:0.9];
         [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setHomeNewDataDic:_homeGroupM.daoDianfu[0]];
         return cell;
