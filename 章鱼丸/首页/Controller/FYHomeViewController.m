@@ -254,6 +254,7 @@
     
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, -20, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height+20) style:UITableViewStyleGrouped];
     
+//    self.tableView = [[UITableView alloc] init];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     //
@@ -919,7 +920,7 @@
     [cell0 setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell0.backgroundColor = [UIColor whiteColor];
     
-      if (indexPath.section == 0)
+      if (indexPath.section == 111110)
     {
 
         static NSString *cellIndentifier = @"celltop";
@@ -1699,7 +1700,8 @@
 
                                               //FYHomeActivityListInfoModel *activity = _homeGroupM.activityGroup[@"listInfo"][1];
                                               //NSArray *adf = _homeGroupM.daoDianfu;
-                                              NSLog(@"%@",_homeGroupM);
+                                              
+                                              //NSLog(@"%@",_homeGroupM);
                                               dispatch_async(dispatch_get_main_queue(),^{
                                                   NSLog(@" 刷新成功2 ");
                                                 [self performSelector:@selector(removeAdvImage) withObject:nil afterDelay:0];

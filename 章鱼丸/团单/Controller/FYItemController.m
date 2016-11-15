@@ -543,13 +543,26 @@
 
     }else
     {
+        static NSString *tsID = @"FY404";
+        UITableViewCell *cell0 = [tableView dequeueReusableCellWithIdentifier:tsID];
+        if(cell0 == nil)
+        {
+            cell0= [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tsID];
+        }
+        NSString *str = @" ";
+        cell0.textLabel.text = str;
+        cell0.textLabel.textAlignment = NSTextAlignmentCenter;
+        [cell0 setSelectionStyle:UITableViewCellSelectionStyleNone];
+        cell0.backgroundColor = [UIColor whiteColor];
+        return cell0;
+        /*
         if (indexPath.row == 0)
         {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
             
             cell.textLabel.text = @"为您推荐";
             cell.selectionStyle=UITableViewCellSelectionStyleNone;
-            return cell;
+            return cell0;
         }else
         {
             static NSString *cellIndentifier = @"cellend";
@@ -562,9 +575,9 @@
             
             cell.delegate = self;
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            return cell;
+            return cell0;
             
-        }
+        }*/
     }
 
     
@@ -720,11 +733,10 @@
 {
     NSLog(@"webViewDidStartLoad");
 }
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error
-{
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     NSLog(@"didFailLoadWithError===%@", error);
 }
-
 
 #pragma  mark - 弹出窗口
 -(void)showSuccessHUD:(NSString *)string{
